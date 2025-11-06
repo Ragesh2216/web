@@ -35,7 +35,6 @@ const Footer = () => {
           <ul className="space-y-3">
             {[
               { to: "/", label: "Home" },
-              { to: "/404", label: "404 Page" },
               { to: "/about", label: "About" },
               { to: "/services", label: "Service" },
               { to: "/contact", label: "Contact" },
