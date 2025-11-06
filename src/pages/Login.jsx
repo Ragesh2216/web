@@ -75,7 +75,7 @@ const App = () => {
       <style>{customStyles}</style>
 
       {/* Main Container - Full viewport, centered, dark background */}
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4 font-inter">
+      <div className="login">
         
         {/* Card Holder - Defines perspective for 3D flip */}
         <div className="w-full max-w-sm h-[500px] card-perspective">
@@ -85,9 +85,7 @@ const App = () => {
             className={`flip-card-inner relative w-full h-full ${isFlipped ? 'flipped' : ''}`}
           >
             
-            {/* ====================================
-                FRONT SIDE: LOGIN FORM
-            ==================================== */}
+           
             <div 
               className="box-login card-face absolute w-full h-full rounded-xl shadow-2xl bg-white p-8 flex flex-col items-center justify-center"
             >

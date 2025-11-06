@@ -8,11 +8,15 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="px-24 mt-20 max-sm:px-4 border-t border-zinc-100 py-20">
+    <footer className="my-section">
       <div className="footertop flex justify-between max-md:flex-col max-md:gap-5 max-md:text-center flex-wrap">
         <div className="logoDesc">
           <img src={Logo} width={100} className=" mx-auto" alt="" />
-          <p>A premium gastby blog template</p>
+          <p>A premium gastby  Your source for the latest news across the globe, business, and lifestyle.
+            Personalized algorithms (like those used by social media and search engines)
+             can restrict the news people see, 
+            confirming their existing beliefs and leading to a lack of exposure to diverse viewpoints.
+          </p>
         </div>
 
         <div className="quickLinks">
@@ -23,6 +27,15 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/404 ">404 Page</Link>
+            </li>
+             <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/services">Service</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -41,6 +54,7 @@ const Footer = () => {
             <li>
               <Link to="/yearly-archive">Yearly Archive</Link>
             </li>
+           
           </ul>
         </div>
         <div className="connectLinks">

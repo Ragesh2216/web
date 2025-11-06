@@ -24,7 +24,7 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <header className=" px-24 py-4 max-sm:px-5 border-b border-zinc-100 items-center">
+    <header className="my-element">
       <nav className="flex justify-between" ref={navRef}>
         <div className="logo">
           <img src={Logo} width={130} alt="" />

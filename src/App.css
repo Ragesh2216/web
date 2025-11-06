@@ -1,341 +1,206 @@
+.my-element {
+    /* px-24 (96px horizontal padding) */
+    padding-left: 6rem;
+    padding-right: 6rem;
 
-h1 {
-	font-weight: bold;
-	margin: 0;
+    /* py-4 (16px vertical padding) */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    /* border-b (bottom border) */
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+
+    /* border-zinc-100 (light gray border color) */
+    border-bottom-color: #0b0be6; /* Tailwind's default zinc-100 color */
+
+    /* items-center (center items in a flex container) */height: 60px; /* Adjust height as needed */
+    width: 100%;
+    
+    /* Linear Gradient: Blue from 0% to 50%, Orange from 50% to 100% */
+    background: linear-gradient(to right, 
+        #74bbeb 0%,    /* Start Blue */
+        #6c26f0 50%,   /* Stop Blue at 50% */
+        #e622bc 50%,   /* Start Orange at 50% */
+        #e6224d 100%   /* End Orange */
+    );
+    
+    color: white; /* Ensures text is visible on the dark background */
+    text-align: center;
+    line-height: 60px;
+    align-items: center; /* Requires 'display: flex;' or 'display: grid;' on the parent/element */
+
 }
 
-h2 {
-	text-align: center;
-}
-
-p {
-	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
-}
-
-span {
-	font-size: 12px;
-}
-
-a {
-	color: #333;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
-}
-
-button {
-	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-}
-
-button:active {
-	transform: scale(0.95);
-}
-
-button:focus {
-	outline: none;
-}
-
-button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
-}
-
-form {
-	background-color: #FFFFFF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
-	height: 100%;
-	text-align: center;
-}
-
-input {
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 100%;
-}
-
-.container {
-	background-color: #fff;
-	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
-	position: relative;
-	overflow: hidden;
-	width: 768px;
-	max-width: 100%;
-	min-height: 480px;
-}
-
-.form-container {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	transition: all 0.6s ease-in-out;
-}
-
-.sign-in-container {
-	left: 0;
-	width: 50%;
-	z-index: 2;
-}
-
-.container.right-panel-active .sign-in-container {
-	transform: translateX(100%);
-}
-
-.sign-up-container {
-	left: 0;
-	width: 50%;
-	opacity: 0;
-	z-index: 1;
-}
-
-.container.right-panel-active .sign-up-container {
-	transform: translateX(100%);
-	opacity: 1;
-	z-index: 5;
-	animation: show 0.6s;
-}
-
-@keyframes show {
-	0%, 49.99% {
-		opacity: 0;
-		z-index: 1;
-	}
-	
-	50%, 100% {
-		opacity: 1;
-		z-index: 5;
-	}
-}
-
-.overlay-container {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 50%;
-	height: 100%;
-	overflow: hidden;
-	transition: transform 0.6s ease-in-out;
-	z-index: 100;
-}
-
-.container.right-panel-active .overlay-container{
-	transform: translateX(-100%);
-}
-
-.overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
-	color: #FFFFFF;
-	position: relative;
-	left: -100%;
-	height: 100%;
-	width: 200%;
-  	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
-}
-
-.container.right-panel-active .overlay {
-  	transform: translateX(50%);
-}
-
-.overlay-panel {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 40px;
-	text-align: center;
-	top: 0;
-	height: 100%;
-	width: 50%;
-	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
-}
-
-.overlay-left {
-	transform: translateX(-20%);
-}
-
-.container.right-panel-active .overlay-left {
-	transform: translateX(0);
-}
-
-.overlay-right {
-	right: 0;
-	transform: translateX(0);
-}
-
-.container.right-panel-active .overlay-right {
-	transform: translateX(20%);
-}
-
-.social-container {
-	margin: 20px 0;
-}
-
-.social-container a {
-	border: 1px solid #DDDDDD;
-	border-radius: 50%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
+/* --- max-sm:px-5 (Responsive padding for small screens) --- */
+@media (max-width: 639px) { /* Tailwind's default 'sm' breakpoint is 640px */
+    .my-element {
+        /* px-5 (20px horizontal padding) */
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+		position: relative; /* Key: allows ::before to be positioned relative to the h2 */
+    display: inline-block; /* Makes the element only as wide as its content */
+    padding-left: 20px; /* Makes space for the accent bar */
+    font-family: serif;
+    color: #2c3e50;
+    font-size: 2rem;
     }
-
-
-
-
-
-    /* --- Global Container and Header Styles --- */
-.services-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
+	.my-element::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 5px; /* Width of the accent bar */
+	background-color: #e67e22; /* Orange color for the accent bar */
+}
 }
 
-.services-header {
-  text-align: center;
-  margin-bottom: 50px;
+
+
+.my-section {
+
+	background-color: #1a80f5;
+    /* mt-20 (80px top margin) */
+    margin-top: 5rem; 
+
+    /* py-20 (80px vertical padding) */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    /* px-24 (96px horizontal padding) */
+    padding-left: 6rem;
+    padding-right: 6rem;
+
+    /* border-t (top border) */
+    border-top-width: 1px;
+    border-top-style: solid;
+    
+    /* border-zinc-100 (light gray border color) */
+    border-top-color: #f4f4f5; /* Tailwind's default zinc-100 color */
 }
 
-.services-header h1 {
-  font-size: 2.5em;
-  color: #1a1a1a;
-  margin-bottom: 10px;
+/* --- max-sm:px-4 (Responsive padding for small screens) --- */
+@media (max-width: 639px) { /* Tailwind's default 'sm' breakpoint is 640px */
+    .my-section {
+        /* px-4 (16px horizontal padding) */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
-.services-header p {
-  font-size: 1.1em;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto;
+
+
+/* 1. Container and Table Sizing */
+.about-sections-container {
+    padding: 2rem;
+    background-color: #f4f4f5; /* Very Light Gray background for the section */
+    border-radius: 8px; /* Slightly rounded corners */
 }
 
-/* --- Service Cards Grid Layout --- */
-.services-grid {
-  display: grid;
-  /* Creates a responsive grid: 
-     1 column on small screens, 
-     2 columns on medium screens, 
-     4 columns on large screens */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+.about-sections-table {
+    width: 100%;
+    border-collapse: collapse; /* Essential for clean borders */
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* --- Individual Service Card Styles --- */
-.service-card {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+/* 2. Header Styling (Primary Colour: Blue) */
+.about-sections-table thead th {
+    background-color: #3498db; /* Primary Blue background */
+    color: white; /* White text for contrast */
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #2980b9; /* Slightly darker blue border */
 }
 
-.service-card:hover {
-  transform: translateY(-5px); /* Lift card on hover */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+/* 3. Row Styling (Zebra Striping) */
+.about-sections-table tbody td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #ddd; /* Light gray line between rows */
+    vertical-align: top; /* Align content to the top of the cell */
 }
 
-.service-icon {
-  font-size: 3em;
-  color: #004d99; /* Primary news blue */
-  margin-bottom: 15px;
+/* Zebra Striping: Alternate row colours for readability */
+.about-sections-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Lighter shade for even rows */
 }
 
-.card-title {
-  font-size: 1.4em;
-  color: #1a1a1a;
-  margin-bottom: 15px;
+.about-sections-table tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* White background for odd rows */
 }
 
-.card-description {
-  font-size: 1em;
-  color: #555;
-  margin-bottom: 25px;
-  flex-grow: 1; /* Ensures descriptions push buttons to the bottom */
+/* Hover Effect (Optional but good for UX) */
+.about-sections-table tbody tr:hover {
+    background-color: #eef7ff; /* Very light blue on hover */
+    cursor: default;
 }
 
-.card-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #004d99;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-  border: 1px solid #004d99;
+.my-about {
+    /* mt-12 (48px top margin) */
+    margin-top: 3rem; 
+	background-image: url(./images/bg.png);
+
+    /* px-24 (96px horizontal padding) */
+    padding-left: 6rem;
+    padding-right: 6rem;
 }
 
-.card-button:hover {
-  background-color: #003366; /* Darker blue on hover */
+/* --- max-sm:px-4 (Responsive padding for small screens) --- */
+@media (max-width: 639px) { /* Tailwind's default 'sm' breakpoint is 640px */
+    .my-about {
+        /* px-4 (16px horizontal padding) */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
-/* --- Call to Action Section Styles --- */
-.cta-section {
-  text-align: center;
-  margin-top: 60px;
-  padding: 40px;
-  background-color: #e6f2ff; /* Light, subtle background */
-  border-radius: 8px;
+
+.contact {
+
+border-radius: 5px;
+    /* w-1/2 (width: 50%) */
+    width: 50%;
+    
+    /* flex flex-col (display: flex; flex-direction: column) */
+    display: flex;
+    flex-direction: column;
+    
+    /* mx-auto (margin-left: auto; margin-right: auto) */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.cta-section h2 {
-  font-size: 2em;
-  color: #1a1a1a;
+/* --- max-md:w-11/12 (Responsive Adjustment) --- */
+/* Applies when the screen width is less than the medium breakpoint (768px) */
+@media (max-width: 767px) { 
+    .contact {
+        /* w-11/12 (width: 91.6667%) */
+        width: 91.6667%; 
+    }
 }
 
-.cta-section p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.primary-cta-button {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #ff6600; /* A contrasting accent color (orange/red) */
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.1em;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-}
-
-.primary-cta-button:hover {
-  background-color: #cc5200; /* Darker accent on hover */
+.login {
+	background-image: url(./images/bg.png);
+    /* min-h-screen (Sets minimum height to the full viewport height) */
+    min-height: 100vh; 
+    
+    /* bg-gray-900 (Dark background color) */
+    background-color: #1f2937; /* Tailwind's default gray-900 */
+    
+    /* flex (Enables flexbox) */
+    display: flex;
+    
+    /* items-center (Center items vertically) */
+    align-items: center;
+    
+    /* justify-center (Center items horizontally) */
+    justify-content: center;
+    
+    /* p-4 (Padding around the entire container: 1rem / 16px) */
+    padding: 1rem;
+    
+    /* font-inter (Sets the font family) */
+    font-family: 'Inter', sans-serif; /* Requires the Inter font to be imported */
 }
