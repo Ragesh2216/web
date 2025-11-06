@@ -85,6 +85,14 @@ const Navbar = () => {
           </li>
           <li>
             <Link
+              to="/subscription"
+              className="navLink text-slate-800 font-medium text-base"
+            >
+              Subscription
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/about"
               className="navLink text-slate-800 font-medium text-base"
             >

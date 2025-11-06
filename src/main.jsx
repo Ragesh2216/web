@@ -11,6 +11,7 @@ import YearArchive from "./pages/YearArchive.jsx";
 import Contact from "./pages/Contact.jsx";
 import About from "./pages/About.jsx";
 import Service from "./pages/Service.jsx";
+import Subscription from "./pages/Subscribtion.jsx";
 
 import Login from "./pages/Login.jsx";
 import SingleBlogPage from "./pages/SingleBlogPage.jsx";
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/yearly-archive",
     element: <App element={<YearArchive />} />,
+  },
+  {
+    path: "/subscription",
+    element: <App element={<Subscription />} />,
   },
    {
     path: "/about",
