@@ -92,15 +92,15 @@
 
 /* 1. Container and Table Sizing */
 .about-sections-container {
-    padding: 2rem;
-    background-color: #f4f4f5; /* Very Light Gray background for the section */
+    padding:0;
+    background-color: #7676f0; /* Very Light Gray background for the section */
     border-radius: 8px; /* Slightly rounded corners */
 }
 
 .about-sections-table {
-    width: 100%;
-    border-collapse: collapse; /* Essential for clean borders */
-    margin-top: 1rem;
+    width:auto;
+     /* Essential for clean borders */
+    margin-top: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
@@ -109,7 +109,7 @@
     background-color: #3498db; /* Primary Blue background */
     color: white; /* White text for contrast */
     padding: 1rem;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     border-bottom: 2px solid #2980b9; /* Slightly darker blue border */
 }
@@ -176,7 +176,57 @@ border-radius: 5px;
 @media (max-width: 767px) { 
     .contact {
         /* w-11/12 (width: 91.6667%) */
-        width: 91.6667%; 
+        width: 86.6667%; 
+    }
+}
+@media (max-width: 480px) {
+    /* 1. Force the container to take full width and remove borders/shadow */
+    .about-sections-table {
+        border: none;
+        box-shadow: none;
+    }
+
+    /* 2. Hide the original table header */
+    .about-sections-table thead {
+        display: none;
+    }
+
+    /* 3. Make table elements behave like blocks/divs */
+    .about-sections-table,
+    .about-sections-table tbody,
+    .about-sections-table tr,
+    .about-sections-table td {
+        display: block; /* Stacks the elements vertically */
+        width: 100%;
+    }
+    
+    /* 4. Style each row as a separate "card" */
+    .about-sections-table tr {
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* 5. Add a label before the cell content */
+    .about-sections-table td {
+        /* Remove the bottom border on cells since the row now has a border */
+        border-bottom: none; 
+        text-align: left; /* Aligns the data content to the right */
+        padding-left: 50%; /* Makes room for the label on the left */
+        position: relative;
+    }
+
+    /* 6. Use ::before to inject the column name from a data attribute */
+    .about-sections-table td::before {
+        /* NOTE: To make this work, you must add data-label="Column Name" 
+           to your HTML <td> elements. */
+        content: attr(data-label); 
+        float:right;
+        font-weight: bold;
+        text-align: center; /* Aligns the label to the left */
+        position: absolute;
+        left: 1rem;
     }
 }
 
@@ -241,7 +291,7 @@ border-radius: 5px;
 	height: auto;
 	width: 100%;
 	background-image: var(--tw-gradient-stops);
-	--tw-gradient-from: #babdf1;
+	--tw-gradient-from: #9a9fe4;
 	--tw-gradient-to: #13f1a7;
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 	background: linear-gradient(to right, var(--tw-gradient-stops));}
