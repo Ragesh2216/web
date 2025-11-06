@@ -37,15 +37,7 @@ export default function Service() {
 
   return (
      <div className="service">
-    <div className="services-container">
-      <div class="tainer">
-    <h1 class="dual-color-heading">Our Services</h1>
-    <p>Clean split gradient clipped to the text.</p>
-  </div>
-      <header className="services-header">
-        <h1>Partnerships & Professional Services</h1>
-        <p>Beyond breaking news, we offer specialized services to help businesses, educators, and organizations thrive with our content and audience.</p>
-      </header>
+    
       
       <div className="services-grid">
         {services.map((service, index) => (
@@ -66,6 +58,6 @@ export default function Service() {
         <a href="/contact-business" className="primary-cta-button">Contact Business Inquiries</a>
       </section>
     </div>
-    </div>
+  
   );
 };
