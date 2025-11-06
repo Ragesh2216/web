@@ -13,10 +13,14 @@ const Home = () => {
   return (
     <>
       <main className="px-24 mt-5 max-sm:px-5">
-        
+        <div className="hero-image">
+  
+       
+
         <FeaturedPost />
         <LatestPost />
         <Subscribe />
+         </div>
       </main>
     </>
   );

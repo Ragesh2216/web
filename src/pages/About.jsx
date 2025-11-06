@@ -41,7 +41,7 @@ const About = () => {
 
  
   return (
- 
+   
     <div className="about-sections-container">
       <table className="about-sections-table">
       <thead>
@@ -62,8 +62,9 @@ const About = () => {
       </tbody>
     </table>
    </div>
+    
 
-  )}
-  
+  )
+};
 
 export default About;

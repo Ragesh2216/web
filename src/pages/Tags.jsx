@@ -8,10 +8,12 @@ import Tag6 from "../images/tag-travel-cover.webp";
 import Tag7 from "../images/tag-food-cover.webp";
 const Tags = () => {
   return (
-    <section className="mt-12 px-24 max-sm:px-4">
+    <section className="tags-bg">
+      <div className="mt-12 px-24 max-sm:px-4">
       <h2 className="text-center text-5xl text-slate-800 font-semibold">
         Tags
       </h2>
+      
       <div className="tagContainer flex flex-wrap gap-8 mt-12 justify-center">
         <div className="tagCard border border-neutral-200 rounded-lg w-80 flex items-center justify-between p-5">
           <div className="tagDesc">
@@ -90,6 +92,7 @@ const Tags = () => {
             <img src={Tag7} className="rounded-md" alt="" />
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

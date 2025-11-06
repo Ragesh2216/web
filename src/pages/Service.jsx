@@ -36,6 +36,7 @@ export default function Service() {
   ];
 
   return (
+     <div className="service">
     <div className="services-container">
       <div class="tainer">
     <h1 class="dual-color-heading">Our Services</h1>
@@ -64,6 +65,7 @@ export default function Service() {
         <p>If you have a unique request or need, contact our business development team directly.</p>
         <a href="/contact-business" className="primary-cta-button">Contact Business Inquiries</a>
       </section>
+    </div>
     </div>
   );
 };

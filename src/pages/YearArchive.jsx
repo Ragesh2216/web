@@ -4,7 +4,7 @@ import Subscribe from "../components/Subscribe";
 
 const YearArchive = () => {
   return (
-    <>
+    <> <div className="archive-bg">
       <main className="mt-12 px-24 max-sm:px-4">
         <section className=" flex items-center flex-col">
           <h2 className="text-center text-5xl text-slate-800 font-semibold">
@@ -198,6 +198,7 @@ const YearArchive = () => {
         </section>
         <Subscribe />
       </main>
+      </div>
     </>
   );
 };

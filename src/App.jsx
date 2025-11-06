@@ -8,6 +8,7 @@ function App({ element }) {
       <Navbar />
       {element}
       <Footer />
+     
     </>
   );
 }
