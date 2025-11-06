@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Logo from "../images/Logo.png";
 import { Link } from "react-router-dom";
 import ArchiveDropdown from "./ArchiveDropdown";
+import ArchiveDop from "./ArchiveDop.jsx";
+
 const Navbar = () => {
   const navRef = useRef();
   const [isOpen, setIsOpen] = useState(false);
@@ -57,12 +59,10 @@ const Navbar = () => {
           } flex-col gap-4 md:flex-row md:gap-6 items-center text-lg text-slate-800 max-md:text-neutral-800 font-normal max-md:absolute max-md:right-[15%] max-md:top-[13%] w-40 md:w-fit max-md:py-4 max-md:bg-white max-md:rounded-lg max-md:shadow-lg max-md:border max-md:border-slate-100`}
         >
           <li>
-            <Link
-              to="/"
-              className="navLink text-slate-800 font-medium text-base"
-            >
-              Home
-            </Link>
+            
+            <li>
+            <ArchiveDop/>
+          </li>
           </li>
           <li>
             <Link

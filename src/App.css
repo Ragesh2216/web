@@ -484,3 +484,10 @@ border-radius: 5px;
           transform: scale(1.05);
         }
        
+
+        .main-bg{
+        background-image: url(./images/tag-technology-jpg.webp);
+        background-position-x: left;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        }
