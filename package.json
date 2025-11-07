@@ -1,10 +1,17 @@
 {
+  "name": "deploy-news-website",
+  "version": "1.0.0",
+  "description": "A news website built with React and Vite, featuring dynamic news fetching and responsive design.",
+  "main": "index.js",
+  "author": "Ragesh m",
+  "license": "MIT",
   "homepage": "https://ragesh2216.github.io/news-website/",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
