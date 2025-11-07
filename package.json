@@ -1,5 +1,5 @@
 {
-  "homepage": "https://ragesh2216.github.io/news-website/",
+  
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
