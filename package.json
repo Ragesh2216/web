@@ -15,7 +15,6 @@
     "@mui/material": "^5.15.15",
     "axios": "^1.13.2",
     "caniuse-lite": "^1.0.30001754",
-    "npx": "^10.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
