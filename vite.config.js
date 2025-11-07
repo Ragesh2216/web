@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // Replace '<REPOSITORY_NAME>' with the actual name of your repository
-const repoName = '/news-website/'; 
+const repoName = '/https://ragesh2216.github.io/web//'; 
 
 export default defineConfig({
   plugins: [react()],
