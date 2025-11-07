@@ -491,3 +491,7 @@ border-radius: 5px;
         background-repeat: no-repeat;
         background-size: cover; 
         }
+
+        .top-stories{
+          background-color: #08b38d;
+        }

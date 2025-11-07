@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import { Link } from "react-router-dom";
-const ArchiveDop = () => {
+const ArchiveDop = ({ closeMenu }) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();
   const toggleDropdown = () => {
@@ -40,7 +40,7 @@ const ArchiveDop = () => {
         >
           <div className="py-1" role="none">
             <Link
-              to="/homepage2"
+              to="/homepage2" onClick={closeMenu}
               className="navLink block px-4 py-2 text-slate-800 font-medium text-base hover:bg-gray-100"
               role="menuitem"
               tabIndex="-1"

@@ -11,6 +11,9 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const closeMenu = () => {
+  setIsOpen(false);
+};
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -58,15 +61,15 @@ const Navbar = () => {
             isOpen ? "flex" : "hidden"
           } flex-col gap-4 md:flex-row md:gap-6 items-center text-lg text-slate-800 max-md:text-neutral-800 font-normal max-md:absolute max-md:right-[15%] max-md:top-[13%] w-40 md:w-fit max-md:py-4 max-md:bg-white max-md:rounded-lg max-md:shadow-lg max-md:border max-md:border-slate-100`}
         >
-          <li>
-            
+          <li> 
             <li>
-            <ArchiveDop/>
+            <ArchiveDop closeMenu={closeMenu} />
           </li>
           </li>
           <li>
             <Link
               to="/tags"
+              onClick={closeMenu}
               className="navLink text-slate-800 font-medium text-base"
             >
               Tags
@@ -74,18 +77,18 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/authors"
+              to="/authors"onClick={closeMenu}
               className="navLink text-slate-800 font-medium text-base"
             >
               Authors
             </Link>
           </li>
           <li>
-            <ArchiveDropdown />
+            <ArchiveDropdown closeMenu={closeMenu}/>
           </li>
           <li>
             <Link
-              to="/subscription"
+              to="/subscription"onClick={closeMenu}
               className="navLink text-slate-800 font-medium text-base"
             >
               Subscription
@@ -93,7 +96,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/about"
+              to="/about"onClick={closeMenu}
               className="navLink text-slate-800 font-medium text-base"
             >
               About
@@ -102,7 +105,7 @@ const Navbar = () => {
           
           <li>
             <Link
-              to="/services"
+              to="/services"onClick={closeMenu}
               className="navLink text-slate-800 font-medium text-base"
             >
               Services
@@ -110,7 +113,7 @@ const Navbar = () => {
             </li>
           <li>
             <Link
-              to="/contact"
+              to="/contact"onClick={closeMenu}
               className="navLink text-slate-800 font-medium text-base"
             >
               contact
@@ -118,7 +121,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/Login"
+              to="/Login"onClick={closeMenu}
               className="navLink text-slate-800 font-medium text-base"
             >
               Login
