@@ -17,6 +17,7 @@ import ArchiveDop from "./components/ArchiveDop.jsx";
 import  Login from "./pages/Login.jsx";
 import SingleBlogPage from "./pages/SingleBlogPage.jsx";
 
+const basename = "/news-website";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -72,7 +73,7 @@ const router = createBrowserRouter([
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <React.StrictMode basename={basename}>
     <RouterProvider router={router} />
   </React.StrictMode>
 );
