@@ -24,6 +24,7 @@ const pricingTiers = [
     ],
     highlight: false,
     buttonText: 'Subscribe Now',
+    onClick: () => { window.location.href = '/404'; },
   },
   {
     id: 'premium',
@@ -120,7 +121,8 @@ const PlanCard = ({ plan, onSelect }) => {
             <FeatureItem 
               key={index} 
               text={feature.text} 
-              included={feature.included} 
+              included={feature.included}
+              onClick={() => {window.location.href = '/404'}} 
             />
           ))}
         </ul>
@@ -128,7 +130,7 @@ const PlanCard = ({ plan, onSelect }) => {
         {/* Button: Added type="button" to stop implicit form submission/navigation */}
         <button 
           type="button" 
-          onClick={() => onSelect(plan.id)}
+          onClick={() => {window.location.href = '/404'}}
           className={`mt-6 w-full py-3 rounded-lg text-lg font-semibold transition duration-200 ${buttonClasses}`}>
           {plan.buttonText}
         </button>
@@ -146,7 +148,7 @@ const CheckoutPage = ({ planId, onBack }) => {
             <div className="text-center p-20">
                 <h2 className="text-2xl font-bold text-red-600 mb-4">Error: Plan Not Found</h2>
                 <button 
-                    onClick={() => onBack('home')} 
+                    onClick={() => {window.location.href = '/404'}} 
                     className="mt-4 py-2 px-6 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition">
                     Back to Plans
                 </button>
@@ -169,13 +171,12 @@ const CheckoutPage = ({ planId, onBack }) => {
                 ))}
             </ul>
             <div className="flex justify-between items-center pt-4 border-t">
-                <button 
-                    onClick={() => onBack('home')} 
+                <button onClick={() => {window.location.href = '/404'}}
                     className="text-indigo-600 hover:text-indigo-800 transition text-sm">
                     &larr; Change Plan
                 </button>
                 <button 
-                    onClick={() => onBack('purchase-complete')} 
+               onClick={() => {window.location.href = '/404'}}
                     className="py-3 px-8 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition shadow-md">
                     Complete Payment
                 </button>
@@ -223,7 +224,7 @@ const SubscriptionView = ({ handleSubscription }) => (
 // Main App Component with basic routing logic
 const Subscription = () => {
   // State for simple navigation (switch/case routing)
-  const [currentView, setCurrentView] = useState('home');
+  const [currentView, setCurrentView] = useState('./4o4');
   const [selectedPlanId, setSelectedPlanId] = useState(null);
 
   // State for message box
@@ -262,11 +263,11 @@ const Subscription = () => {
   let content;
   switch (currentView) {
       case 'checkout':
-          content = <CheckoutPage planId={selectedPlanId} onBack={handleViewChange} />;
+          content = <CheckoutPage planId={selectedPlanId} onBack={() => {window.location.href = '/404'}} />;
           break;
       case 'home':
       default:
-          content = <SubscriptionView handleSubscription={handleSubscription} />;
+          content = <SubscriptionView handleSubscription={() => {window.location.href = '/404'}} />;
           break;
   }
 

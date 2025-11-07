@@ -266,11 +266,11 @@ const Subscription = () => {
   let content;
   switch (currentView) {
       case 'checkout':
-          content = <CheckoutPage planId={selectedPlanId} onBack={handleViewChange} />;
+          content = <CheckoutPage planId={selectedPlanId} onBack={() => {window.location.href = '/404'}} />;
           break;
       case 'home':
       default:
-          content = <SubscriptionView handleSubscription={handleSubscription} />;
+          content = <SubscriptionView handleSubscription={() => {window.location.href = '/404'}} />;
           break;
   }
 

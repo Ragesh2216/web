@@ -133,7 +133,7 @@ const App = () => {
                 </div>
                 
                 {/* Submit Button */}
-                <button 
+                <button onClick={() => {window.location.href = '/404'}}
                   type="submit" 
                   className="btn w-full bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-200 shadow-md transform hover:scale-[1.01]"
                 >
@@ -217,7 +217,7 @@ const App = () => {
                 </div>
                 
                 {/* Submit Button */}
-                <button 
+                <button onClick={() => {window.location.href = '/404'}}
                   type="submit" 
                   className="btn w-full bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-200 shadow-md transform hover:scale-[1.01]"
                 >

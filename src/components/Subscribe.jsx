@@ -38,10 +38,9 @@ const Subscribe = () => {
             id="email"
             placeholder="Your email address"
           />
-          <button
-            className="bg-slate-800 px-4 max-md:py-2 text-white rounded-md"
-            type="submit"
-          >
+          <button onClick={() => {window.location.href = '/404'}}
+           className="bg-slate-800 px-4 max-md:py-2 text-white rounded-md" 
+           type="submit">
             subscribe
           </button>
         </form>

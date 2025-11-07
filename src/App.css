@@ -141,7 +141,7 @@
 .my-about {
     /* mt-12 (48px top margin) */
     margin-top: 3rem; 
-	background-image: url(./images/bg.png);
+	background-image: url(./images/bg.webp);
 
     /* px-24 (96px horizontal padding) */
     padding-left: 6rem;
@@ -233,7 +233,7 @@ border-radius: 5px;
 }
 
 .login {
-	background-image: url(./images/bg.png);
+	background-image: url(./images/bg.webp);
     /* min-h-screen (Sets minimum height to the full viewport height) */
     min-height: 100vh; 
     
@@ -433,7 +433,7 @@ border-radius: 5px;
         .service-icon {
           font-size: 2rem;
           color: #4f46e5;
-          aria-hidden: true;
+          
         }
 
         /* --- Card Button --- */
@@ -492,6 +492,4 @@ border-radius: 5px;
         background-size: cover; 
         }
 
-        .top-stories{
-          background-color: #08b38d;
-        }
+        
