@@ -1,7 +1,6 @@
 {
   "name": "your-project",
   "version": "1.0.0",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,11 +8,6 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "type": "module",
-  
-   
-
-
-
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -21,6 +15,7 @@
     "@mui/material": "^5.15.15",
     "axios": "^1.13.2",
     "caniuse-lite": "^1.0.30001754",
+    "lucide-react": "^0.553.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
@@ -40,11 +35,8 @@
     "tailwindcss": "^3.4.3",
     "vite": "^5.2.0"
   },
-
-
-
- "rewrites": 
-    { "source": "/(.*)", "destination": "/" }
-  
-
+  "rewrites": {
+    "source": "/(.*)",
+    "destination": "/"
+  }
 }
