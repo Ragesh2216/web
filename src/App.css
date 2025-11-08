@@ -125,16 +125,16 @@
 
 /* Zebra Striping: Alternate row colours for readability */
 .about-sections-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9; /* Lighter shade for even rows */
+    background-color: #9decf7; /* Lighter shade for even rows */
 }
 
 .about-sections-table tbody tr:nth-child(odd) {
-    background-color: #ffffff; /* White background for odd rows */
+    background-color: #fa8282; /* White background for odd rows */
 }
 
 /* Hover Effect (Optional but good for UX) */
 .about-sections-table tbody tr:hover {
-    background-color: #eef7ff; /* Very light blue on hover */
+    background-color: #3190e4; /* Very light blue on hover */
     cursor: default;
 }
 
@@ -298,198 +298,126 @@ border-radius: 5px;
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 	background: linear-gradient(to right, var(--tw-gradient-stops));}
 
-	.service{
-		height: auto;
-	width: 100%;
-	background-image: var(--tw-gradient-stops);
-	--tw-gradient-from: #08b38d;
-	--tw-gradient-to: #13f1a7;
+	.services-page {
+  position: absolute;
+  z-index: 50;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+/* Grid layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem; position: absolute;
+
+}
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Service Card */
+.service-card {
+  background-color: #ffffff;
+  padding: 1.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  border-top: 4px solid transparent;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-top-color: #6366f1;
+}
+
+/* Icon Styling */
+.icon-container {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 9999px;
+  background-color: #eef2ff;
+  border: 2px solid #e0e7ff;
+}
+.service-icon {
+  font-size: 2rem;
+  color: #4f46e5;
+}
+
+/* Button */
+.card-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.card-button:hover {
+  background-color: #4338ca;
+  transform: scale(1.03);
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  max-width: 48rem;
+  margin: 5rem auto 0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.primary-cta-button {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  background-color: #10b981;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+.primary-cta-button:hover {
+  background-color: #059669;
+  transform: scale(1.05);
+}
+
+/* Simple fade animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+ .nav{
+  	background-color: var(--tw-gradient-stops);
+	--tw-gradient-from: #e66e6e;
+	--tw-gradient-to: #d1f337;
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 	background: linear-gradient(to right, var(--tw-gradient-stops));
-}
-	
-
-        /* --- Base Setup --- */
-        .services-page {
-          padding: 5rem 1rem;
-          background-color: white;
-          font-family: sans-serif;
-        }
-        
-        /* --- Animations --- */
-        @keyframes fadeInUp {
-          0% { opacity: 0; transform: translateY(20px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- Gradient Title (Main Heading) --- */
-        .gradient-header-container {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .gradient-title {
-            font-size: 2.5rem; 
-            font-weight: 800;
-            line-height: 1;
-            /* Gradient Clipping */
-            background: linear-gradient(135deg, #4f46e5, #10b981); /* Indigo to Green */
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .gradient-subtitle {
-            margin-top: 0.5rem;
-            color: #4b5563;
-        }
-        @media (min-width: 640px) {
-            .gradient-title {
-                font-size: 4rem; 
-            }
-        }
-        
-        /* --- Header (Secondary Content) --- */
-        .header-content {
-          text-align: center;
-          margin-bottom: 4rem; 
-          max-width: 64rem;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .header-title {
-          font-size: 2.25rem; 
-          font-weight: 800;
-          color: #1f2937;
-          line-height: 1.25;
-        }
-        .header-title-span {
-          color: #4f46e5; /* Indigo */
-        }
-        .header-subtitle-text {
-          margin-top: 1rem;
-          font-size: 1.25rem;
-          color: #4b5563;
-        }
-
-        /* --- Services Grid --- */
-        .services-grid {
-          display: grid;
-          grid-template-columns: repeat(1, minmax(0, 1fr));
-          gap: 2rem;
-          max-width: 80rem;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        @media (min-width: 768px) {
-          .services-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-        }
-        @media (min-width: 1024px) {
-          .services-grid {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-          }
-        }
-
-        /* --- Service Card --- */
-        .service-card {
-          background-color: white;
-          padding: 1.75rem;
-          border-radius: 0.75rem;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          transition: all 0.3s ease-in-out;
-          cursor: pointer;
-          border-top: 4px solid transparent;
-
-          /* Animation application */
-          opacity: 0;
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-        
-        /* Staggering the animation delay */
-        .services-grid .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .services-grid .service-card:nth-child(2) { animation-delay: 0.25s; }
-        .services-grid .service-card:nth-child(3) { animation-delay: 0.4s; }
-        .services-grid .service-card:nth-child(4) { animation-delay: 0.55s; }
-
-        /* Hover Animation (Lift and Border Change) */
-        .service-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-          border-top-color: #6366f1; /* Lighter Indigo */
-        }
-
-        /* --- Icon Styling --- */
-        .icon-container {
-          padding: 1rem;
-          margin-bottom: 1rem;
-          border-radius: 9999px;
-          background-color: #eef2ff; /* Lightest Indigo */
-          border: 2px solid #e0e7ff;
-        }
-        .service-icon {
-          font-size: 2rem;
-          color: #4f46e5;
-          
-        }
-
-        /* --- Card Button --- */
-        .card-button {
-          margin-top: auto;
-          padding: 0.5rem 1.5rem;
-          background-color: #4f46e5;
-          color: white;
-          font-weight: 600;
-          border-radius: 9999px;
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-          transition: all 0.3s ease-in-out;
-          text-decoration: none;
-          transform: scale(1);
-        }
-        .card-button:hover {
-          background-color: #4338ca;
-          transform: scale(1.03);
-        }
-        
-        /* --- CTA Section --- */
-        .cta-section {
-          text-align: center;
-          padding: 3rem 1.5rem;
-          background-color: #f9fafb;
-          border-radius: 0.75rem;
-          max-width: 48rem;
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: 5rem;
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        .primary-cta-button {
-          display: inline-block;
-          padding: 0.75rem 2.5rem;
-          background-color: #10b981; /* Green */
-          color: white;
-          font-size: 1.125rem;
-          font-weight: 700;
-          border-radius: 9999px;
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease-in-out;
-          text-decoration: none;
-          transform: scale(1);
-        }
-        .primary-cta-button:hover {
-          background-color: #059669;
-          transform: scale(1.05);
-        }
-       
-
-        .main-bg{
-        background-image: url(./images/tag-technology-jpg.webp);
-        background-position-x: left;
-        background-repeat: no-repeat;
-        background-size: cover; 
-        }
-
-        
+ }       
