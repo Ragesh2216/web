@@ -1,6 +1,6 @@
 import React from "react";
-import author3 from "../images/biswajit.webp";
-import girlImg from "../images/girl-waring-woolen-sawl.webp";
+import author1 from "../images/suravi.webp";
+import travelImg from "../images/window-blue-wall.webp";
 import FormatQuoteOutlinedIcon from "@mui/icons-material/FormatQuoteOutlined";
 import { Link } from "react-router-dom";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -12,18 +12,18 @@ import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import Subscribe from "../components/Subscribe";
 
-const SingleBlogPage = () => {
+const SingleBlog2 = () => {
   return (
     <main className=" mt-12 px-24 max-sm:px-4">
       <section className="w-10/12 max-md:w-full mx-auto">
         <div className="blogHeader">
           <h1 className="text-5xl text-slate-800 max-sm:text-3xl max-sm:text-center font-semibold">
-            Self-observation is the first step of inner unfolding
+            Never let your memories be greater than your dreams
           </h1>
           <div className="metaData mt-5 flex max-sm:flex-col max-sm:gap-2 items-center gap-8">
             <div className="author flex items-center gap-2">
               <img
-                src={author3}
+                src={author1}
                 width={30}
                 height={30}
                 className="rounded-full"
@@ -41,7 +41,7 @@ const SingleBlogPage = () => {
         </div>
         <div className="blogCoverImg mt-8">
           <img
-            src={girlImg}
+            src={travelImg}
             className="w-full object-cover rounded-xl"
             alt=""
           />
@@ -150,4 +150,4 @@ const SingleBlogPage = () => {
   );
 };
 
-export default SingleBlogPage;
+export default SingleBlog2;

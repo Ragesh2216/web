@@ -16,6 +16,11 @@ import Subscription from "./pages/Subscription.jsx";
 import ArchiveDop from "./components/ArchiveDop.jsx";
 import  Login from "./pages/Login.jsx";
 import SingleBlogPage from "./pages/SingleBlogPage.jsx";
+import SingleBlog1 from "./pages/SingleBlog1.jsx";
+import SingleBlog2 from "./pages/SingleBlog2.jsx";
+import SingleBlog3 from "./pages/SingleBlog3.jsx";
+import SingleBlog4 from "./pages/SingleBlog4.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +74,27 @@ const router = createBrowserRouter([
   {
     path: "/single-blog",
     element: <App element={<SingleBlogPage />} />,
+  },
+   {
+    path: "/single-blog1",
+    element: <App element={<SingleBlog1 />} />,
+  },
+   {
+    path: "/single-blog2",
+    element: <App element={<SingleBlog2 />} />,
+  },
+   {
+    path: "/single-blog3",
+    element: <App element={<SingleBlog3 />} />,
+
+  },
+   {
+    path: "/single-blog4",
+    element: <App element={<SingleBlog4 />} />,
+  },
+  {
+    path: "*",
+    element: <App element={<NotFound />} />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

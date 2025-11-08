@@ -29,7 +29,7 @@ const Tags = () => {
         <div className="tagCard border border-neutral-200 rounded-lg w-80 flex items-center justify-between p-5">
           <div className="tagDesc">
             <h5 className="text-xl font-semibold text-slate-800">
-              Inspiration
+              motivation
             </h5>
             <small className="text-base text-neutral-600">6 posts</small>
           </div>
@@ -40,7 +40,7 @@ const Tags = () => {
         <div className="tagCard border border-neutral-200 rounded-lg w-80 flex items-center justify-between p-5">
           <div className="tagDesc">
             <h5 className="text-xl font-semibold text-slate-800">
-              Inspiration
+              loveliness
             </h5>
             <small className="text-base text-neutral-600">6 posts</small>
           </div>
@@ -51,7 +51,7 @@ const Tags = () => {
         <div className="tagCard border border-neutral-200 rounded-lg w-80 flex items-center justify-between p-5">
           <div className="tagDesc">
             <h5 className="text-xl font-semibold text-slate-800">
-              Inspiration
+              health
             </h5>
             <small className="text-base text-neutral-600">6 posts</small>
           </div>
@@ -62,7 +62,7 @@ const Tags = () => {
         <div className="tagCard border border-neutral-200 rounded-lg w-80 flex items-center justify-between p-5">
           <div className="tagDesc">
             <h5 className="text-xl font-semibold text-slate-800">
-              Inspiration
+              technology
             </h5>
             <small className="text-base text-neutral-600">6 posts</small>
           </div>
@@ -73,7 +73,7 @@ const Tags = () => {
         <div className="tagCard border border-neutral-200 rounded-lg w-80 flex items-center justify-between p-5">
           <div className="tagDesc">
             <h5 className="text-xl font-semibold text-slate-800">
-              Inspiration
+              traveling
             </h5>
             <small className="text-base text-neutral-600">6 posts</small>
           </div>
@@ -84,7 +84,7 @@ const Tags = () => {
         <div className="tagCard border border-neutral-200 rounded-lg w-80 flex items-center justify-between p-5">
           <div className="tagDesc">
             <h5 className="text-xl font-semibold text-slate-800">
-              Inspiration
+              food
             </h5>
             <small className="text-base text-neutral-600">6 posts</small>
           </div>

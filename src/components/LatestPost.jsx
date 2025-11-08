@@ -4,6 +4,7 @@ import LatestPostCard from "./LatestPostCard";
 const LatestPost = () => {
   const BlogPosts = data.BlogPosts;
   const latestBlogs = BlogPosts.filter((blog) => blog.posttype === "latest");
+  console.log(latestBlogs);
   return (
     <section className="latestPost mt-9">
       <h2 className="text-2xl font-semibold border-b-4 w-fit border-b-blue-600 text-slate-800">
@@ -15,7 +16,7 @@ const LatestPost = () => {
         ))}
 
         <div className="flex justify-center">
-          <button className="bg-slate-800 rounded-md text-white px-4 py-2 w-fit">
+          <button onClick={() => {window.location.href = './'}} className="bg-slate-800 rounded-md text-white px-4 py-2">
             Show More Posts
           </button>
         </div>

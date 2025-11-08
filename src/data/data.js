@@ -51,6 +51,7 @@ const AuthorData = [
 
 const BlogPosts = [
   {
+    link: "/single-blog",
     img: girlImg,
     tag: "LifeStyle",
     title: "Self-observation is the first step of inner unfolding",
@@ -59,6 +60,7 @@ const BlogPosts = [
     posttype: "feature",
   },
   {
+    link: "/single-blog1",
     img: girlImg2,
     tag: "Health",
     title:
@@ -68,6 +70,7 @@ const BlogPosts = [
     posttype: "feature",
   },
   {
+    link: "/single-blog2",
     img: travelImg,
     tag: "Travel",
     title: "Never let your memories be greater than your dreams",
@@ -76,6 +79,7 @@ const BlogPosts = [
     posttype: "latest",
   },
   {
+    link: "/single-blog3",
     img: techImg,
     tag: "Technology",
     title: "Bangladesh has developed plastic alternative using jute",
@@ -84,6 +88,7 @@ const BlogPosts = [
     posttype: "latest",
   },
   {
+    link: "/single-blog4",
     img: foodImg,
     tag: "Food",
     title: "I do not stick to rules when cooking. I rely on my imagination",

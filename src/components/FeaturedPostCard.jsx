@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const FeaturedPostCard = ({ img, title, tag, desc, date }) => {
+const FeaturedPostCard = ({ img, title, tag, desc, date, link }) => {
   return (
     <div className="card max-md:flex-col flex shadow-[0px_3px_8px_0px_rgba(30,41,59,0.24)] rounded-xl p-3  gap-5">
       <div className="img w-80 max-md:w-full h-56">
@@ -16,7 +16,7 @@ const FeaturedPostCard = ({ img, title, tag, desc, date }) => {
           {tag}
         </span>
         <h4 className="text-3xl text-slate-800 font-bold hover:underline underline-offset-8">
-          <Link to="/single-blog">{title}</Link>
+          <Link to={link}>{title}</Link>
         </h4>
         <p className="text-slate-800 text-lg">{desc}...</p>
         <div className="dateTime text-slate-800 text-lg flex font-medium gap-3">
