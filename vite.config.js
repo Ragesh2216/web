@@ -8,7 +8,7 @@ const repoName = '/https://ragesh2216.github.io/web//';
 export default defineConfig({
   plugins: [react()],
   // Set the base path for deployment
-  base: process.env.NODE_ENV === 'production' ? repoName : '/',
+  
   base: './',
   // OR, for a simpler fix that generally works:
   // base: './', 
