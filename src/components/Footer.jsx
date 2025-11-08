@@ -34,10 +34,10 @@ const Footer = () => {
           <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">Quick Links</h5>
           <ul className="space-y-3">
             {[
-              { to: "/", label: "Home" },
-              { to: "/about", label: "About" },
-              { to: "/services", label: "Service" },
-              { to: "/contact", label: "Contact" },
+              { link to: "/", label: "Home" },
+              { link to: "/about", label: "About" },
+              { link to: "/services", label: "Service" },
+              {  link to: "/contact", label: "Contact" },
             ].map((link, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
@@ -57,10 +57,10 @@ const Footer = () => {
           <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">Archive</h5>
           <ul className="space-y-3">
             {[
-              { to: "/tags", label: "Tags" },
-              { to: "/authors", label: "Authors" },
-              { to: "/monthly-archive", label: "Monthly Archive" },
-              { to: "/yearly-archive", label: "Yearly Archive" },
+              {link to: "/tags", label: "Tags" },
+              { link to: "/authors", label: "Authors" },
+              { link to: "/monthly-archive", label: "Monthly Archive" },
+              { link to: "/yearly-archive", label: "Yearly Archive" },
             ].map((link, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
@@ -80,10 +80,10 @@ const Footer = () => {
           <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">Connect</h5>
           <ul className="space-y-3">
             {[
-              { to: "/twitter", label: "Twitter" },
-              { to: "/facebook", label: "Facebook" },
-              { to: "/linkedin", label: "Linkedin" },
-              { to: "/github", label: "Github" },
+              { link to: "/twitter", label: "Twitter" },
+              { link to: "/facebook", label: "Facebook" },
+              { link lo to: "/linkedin", label: "Linkedin" },
+              { link to: "/github", label: "Github" },
             ].map((link, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
@@ -108,10 +108,10 @@ const Footer = () => {
           <h5 className="text-sm uppercase font-medium tracking-wider text-white">Follow:</h5>
           <ul className="flex space-x-3">
             {[
-              { to: "/twitter", Icon: TwitterIcon },
-              { to: "/facebook", Icon: FacebookIcon },
-              { to: "/instagram", Icon: InstagramIcon },
-              { to: "/github", Icon: GitHubIcon },
+              { link to: "/twitter", Icon: TwitterIcon },
+              { link to: "/facebook", Icon: FacebookIcon },
+              { link to: "/instagram", Icon: InstagramIcon },
+              { link  to: "/github", Icon: GitHubIcon },
             ].map((social, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
