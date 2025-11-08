@@ -37,7 +37,7 @@ const Footer = () => {
               { to: "/", label: "Home" },
               { to: "/about", label: "About" },
               { to: "/services", label: "Service" },
-              { to: "/contact", label: "Contact" },
+              {  to: "/contact", label: "Contact" },
             ].map((link, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
@@ -58,7 +58,7 @@ const Footer = () => {
           <ul className="space-y-3">
             {[
               { to: "/tags", label: "Tags" },
-              { to: "/authors", label: "Authors" },
+              {  to: "/authors", label: "Authors" },
               { to: "/monthly-archive", label: "Monthly Archive" },
               { to: "/yearly-archive", label: "Yearly Archive" },
             ].map((link, index) => (
@@ -80,10 +80,10 @@ const Footer = () => {
           <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">Connect</h5>
           <ul className="space-y-3">
             {[
-              { to: "/twitter", label: "Twitter" },
+              {  to: "/twitter", label: "Twitter" },
               { to: "/facebook", label: "Facebook" },
-              { to: "/linkedin", label: "Linkedin" },
-              { to: "/github", label: "Github" },
+              {  to: "/linkedin", label: "Linkedin" },
+              {  to: "/github", label: "Github" },
             ].map((link, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
@@ -108,10 +108,10 @@ const Footer = () => {
           <h5 className="text-sm uppercase font-medium tracking-wider text-white">Follow:</h5>
           <ul className="flex space-x-3">
             {[
-              { to: "/twitter", Icon: TwitterIcon },
+              {  to: "/twitter", Icon: TwitterIcon },
               { to: "/facebook", Icon: FacebookIcon },
               { to: "/instagram", Icon: InstagramIcon },
-              { to: "/github", Icon: GitHubIcon },
+              {  to: "/github", Icon: GitHubIcon },
             ].map((social, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
