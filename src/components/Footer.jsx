@@ -41,12 +41,12 @@ const Footer = () => {
             ].map((link, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
-                <a 
+                <link
                   href={link.to} 
                   className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-base font-normal"
                 >
                   {link.label}
-                </a>
+                </link>
               </li>
             ))}
           </ul>
@@ -64,12 +64,12 @@ const Footer = () => {
             ].map((link, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
-                <a 
+                <link
                   href={link.to} 
                   className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-base font-normal"
                 >
                   {link.label}
-                </a>
+                </link>
               </li>
             ))}
           </ul>
@@ -87,12 +87,12 @@ const Footer = () => {
             ].map((link, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
-                <a 
-                  href={link.to} 
+                <link
+                  href={link.to}
                   className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-base font-normal"
                 >
                   {link.label}
-                </a>
+                </link>
               </li>
             ))}
           </ul>
@@ -115,10 +115,10 @@ const Footer = () => {
             ].map((social, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}
-                <a href={social.to}>
+                <link href={social.to}>
                   {/* Styled icons with hover animation */}
                   <social.Icon className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-xl" />
-                </a>
+                </link>
               </li>
             ))}
           </ul>
