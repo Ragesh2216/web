@@ -8,7 +8,6 @@ import HeroImg from "../images/hero.png";
 
 import Subscribe from "../components/Subscribe";
 import FeaturedPost from "../components/FeaturedPost";
-import LatestPost from "../components/LatestPost";
 const Home = () => {
   return (
     <>
@@ -18,7 +17,7 @@ const Home = () => {
        
 
         <FeaturedPost />
-        <LatestPost />
+        
         <Subscribe />
          </div>
       </main>
