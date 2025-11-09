@@ -40,7 +40,7 @@ const ArchiveDop = ({ closeMenu }) => {
         >
           <div className="py-1" role="none">
             <Link
-              to="/homepage2" onClick={closeMenu}
+              to="/homepage2" onClick={() => { closeMenu?.(); setIsOpen(false); }}
               className="navLink block px-4 py-2 text-slate-800 font-medium text-base hover:bg-gray-100"
               role="menuitem"
               tabIndex="-1"

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ArchiveDropdown from "./ArchiveDropdown";
 import ArchiveDop from "./ArchiveDop.jsx";
 
-const Navbar = () => {
+const Navbar = ({closemenu}) => {
   const navRef = useRef();
   const [isOpen, setIsOpen] = useState(false);
 

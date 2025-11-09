@@ -71,7 +71,7 @@ const ArchiveDropdown = ({ closeMenu }) => {
             
             <Link
               to="/monthly-archive" 
-              onClick={closeMenu}
+              onClick={() => { closeMenu?.(); setIsOpen(false); }}
               className="navLink block px-4 py-2 text-slate-800 font-medium text-base hover:bg-gray-100"
               role="menuitem"
               tabIndex="0" // Set to 0 so it's focusable with Tab
@@ -81,7 +81,7 @@ const ArchiveDropdown = ({ closeMenu }) => {
             </Link>
             <Link
               to="/yearly-archive" 
-              onClick={closeMenu}
+              onClick={() => { closeMenu?.(); setIsOpen(false); }}
               className="navLink block px-4 py-2 text-slate-800 font-medium text-base hover:bg-gray-100"
               role="menuitem"
               tabIndex="0" // Set to 0 so it's focusable with Tab

@@ -181,7 +181,7 @@ const Latest = () => {
                     <p className="text-lg max-w-2xl mx-auto mb-6">
                         In-depth stories, investigative journalism, and the latest updates that matter to you.
                     </p>
-                    <Link to="./single-blog" className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-medium hover:bg-yellow-500 transition">
+                    <Link to="../single-blog3" className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-medium hover:bg-yellow-500 transition">
                         Explore Articles
                     </Link  >
                 </section>
@@ -290,7 +290,7 @@ const Latest = () => {
                                     </h3>
                                     <p className="text-gray-600 mb-4 leading-relaxed">
                                         In a complex, dynamic global economy, attempts by central bodies to micromanage outcomes inevitably lead to unintended consequences and economic distortion...
-                                        <a href="#" className="text-blue-600 font-medium hover:text-blue-800 transition">
+                                        <a href="./single-blog" className="text-blue-600 font-medium hover:text-blue-800 transition">
                                             (Read Full Article)
                                         </a>
                                     </p>
@@ -307,19 +307,19 @@ const Latest = () => {
                                 </h3>
                                 <ul className="space-y-4">
                                     <li className="border-b pb-2">
-                                        <a href="#" className="font-medium text-gray-800 hover:text-red-600 transition">
+                                        <a href="./single-blog4" className="font-medium text-gray-800 hover:text-red-600 transition">
                                             Why Remote Work is Not the Future We Expected
                                         </a>
                                         <p className="text-xs text-gray-500 mt-1">Culture | 4 min read</p>
                                     </li>
                                     <li className="border-b pb-2">
-                                        <a href="#" className="font-medium text-gray-800 hover:text-red-600 transition">
+                                        <a href="./single-blog2" className="font-medium text-gray-800 hover:text-red-600 transition">
                                             The Hidden Cost of Cloud Computing Dependency
                                         </a>
                                         <p className="text-xs text-gray-500 mt-1">Tech | 6 min read</p>
                                     </li>
                                     <li>
-                                        <a href="#" className="font-medium text-gray-800 hover:text-red-600 transition">
+                                        <a href="./single-blog" className="font-medium text-gray-800 hover:text-red-600 transition">
                                             Revisiting the Cold War Strategy in Modern Geopolitics
                                         </a>
                                         <p className="text-xs text-gray-500 mt-1">World | 7 min read</p>
