@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.nav{
+  height: 60px;
+}
 .navLink {
     position: relative;
     color: inherit;
@@ -11,10 +13,10 @@
   .navLink::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 2px;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 5px;
     background-color: #1e293b; /* Adjust color as needed */
     transition: width 0.3s;
   }

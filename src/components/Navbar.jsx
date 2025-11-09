@@ -24,10 +24,11 @@ const Navbar = () => {
   return (
     // ✅ Navbar fixed with proper z-index
     <div className="nav">
-      <header className="bg-gradient-to-r from-[#fc7fd2] to-[#d1f337] fixed top-0 left-0 w-full shadow-md z-[9999]">
+      <header className="bg-gradient-to-r from-[#fc7fd2] to-[#d1f337] 
+      fixed top-0 left-0 w-full shadow-md z-[9999]">
 
         <nav
-          className="flex justify-between items-center px-6 py-3 max-w-7xl mx-auto"
+          className="flex justify-between items-center px-6 py-3 max-w-7xl mx-auto "
           ref={navRef}
         >
           {/* Logo */}
@@ -64,11 +65,12 @@ const Navbar = () => {
 
           {/* Navigation links */}
           <ul
-            className={`md:flex ${isOpen ? "flex" : "hidden"
+            className={`md:flex ${isOpen ? "flex" : "hidden" 
               } flex-col gap-4 md:flex-row md:gap-6 items-center text-lg text-slate-800 
           font-medium max-md:absolute max-md:right-[15%] max-md:top-[13%] 
           w-40 md:w-fit max-md:py-4 max-md:bg-white max-md:rounded-lg 
-          max-md:shadow-lg max-md:border max-md:border-slate-100`}
+          max-md:shadow-lg max-md:border 
+           max-md:border-slate-100`}
           >
             <li>
               <ArchiveDop closeMenu={closeMenu} />

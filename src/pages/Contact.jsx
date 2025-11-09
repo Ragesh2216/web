@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <main className=" my-about">
       <section className="contact">
-        <h2 className="text-5xl text-slate-800 font-semibold">Contact Me</h2>
+        <h2 className="text-5xl text-slate-800 font-semibold  c">Contact Me</h2>
         <p className="text-slate-800 text-lg mt-6">
           Hello! Do you have any question or suggestion about this site, or just
           want to say Hi? Send me a message using below form. I will get back to

@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Latest from "./Latest";
-import Readmore from "../components/Readmore";
-import Readcard from "../components/Readcard";
+import Latest from "../pages/Latest";
+import ExploreServices from "../components/ExploreServices";
 
 const Homepage2 = () => {
     return (
         <>
             <div>
                 <Latest />
+                <ExploreServices />
             </div>
         </>
     );

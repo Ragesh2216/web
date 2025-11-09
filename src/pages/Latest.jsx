@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 // --- Icon Components (Lucide Icons - simple white/blue versions) ---
@@ -71,9 +72,14 @@ const Hero = () => {
                     <p className="text-lg mb-10 max-w-lg font-light">
                         innovation storytelling and strategic communication the drive real impact .
                     </p>
-                    <button className="bg-[#FFD900] text-gray-900 font-bold py-3 px-10 rounded-full shadow-lg transition duration-300 transform hover:scale-105 hover:bg-yellow-400">
+
+                    <Link
+                        to="/explore-services"
+                        className="inline-block bg-[#FFD900] text-gray-900 font-bold py-3 px-10 rounded-full shadow-lg transition duration-300 transform hover:scale-105 hover:bg-yellow-400"
+                    >
                         Explore Services
-                    </button>
+                    </Link>
+
                 </div>
 
                 {/* Abstract Visual Element - Right Side (The spiky green sphere) */}
@@ -100,7 +106,7 @@ const Hero = () => {
 // Service Card Component (For the "What We Do" section)
 const ServiceCard = ({ icon, title, description }) => {
     return (
-        <div className="bg-white p-8 rounded-lg shadow-xl border border-gray-100 transition duration-300 hover:shadow-2xl hover:shadow-[#4C51F9]/10">
+        <div className="bg-gradient-to-r from-rose-300 to-yellow-300 p-8 rounded-lg shadow-xl border border-gray-100 transition duration-300 hover:shadow-2xl hover:shadow-[#4C51F9]/10">
             <div className="text-[#4C51F9] mb-4">
                 {icon}
             </div>
@@ -127,12 +133,12 @@ const Latest = () => {
     ];
 
     return (
-        <div className="bg-white font-sans min-h-screen">
+        <div className=" font-sans min-h-screen">
             <Header />
             <Hero />
 
 
-            <section className="bg-white py-20 sm:py-32">
+            <section className="bg-gradient-to-r from-red-600 to-blue-600 py-20 sm:py-32">
                 <div className='main-bg'>
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -156,7 +162,7 @@ const Latest = () => {
                             <div className="space-y-6">
                                 <h2 className="text-sm uppercase tracking-widest text-[#4C51F9] font-semibold">Our Expertise</h2>
                                 <h3 className="text-4xl font-extrabold text-gray-900 mb-6">What We Do</h3>
-                                <p className="text-gray-600 text-lg mb-8 border-l-4 border-[#4C51F9] pl-4 italic">
+                                <p className="text-black-900 text-lg mb-8 border-l-4 border-[#4C51F9] pl-4 italic">
                                     We bring you in-depth stories, investigative reports, and expert insights from across the world. Our editorial team is dedicated to delivering credible journalism that informs, inspires, and empowers our readers.
                                 </p>
 
@@ -175,12 +181,12 @@ const Latest = () => {
                     <p className="text-lg max-w-2xl mx-auto mb-6">
                         In-depth stories, investigative journalism, and the latest updates that matter to you.
                     </p>
-                    <button className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-medium hover:bg-yellow-500 transition">
+                    <Link to="./single-blog" className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-medium hover:bg-yellow-500 transition">
                         Explore Articles
-                    </button>
+                    </Link  >
                 </section>
 
-                <section className="bg-blue-50 py-20 text-center">
+                <section className="bg-green-300 py-20 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold text-blue-700 mb-4">
                         Your Daily Source for Trusted News and Bold Perspectives
                     </h1>
@@ -190,16 +196,14 @@ const Latest = () => {
                         context, and insight you can rely on.
                     </p>
                     <div className="flex justify-center gap-4">
-                        <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-                            Read Latest News
-                        </button>
-                        <button onClick={() => {window.location.href = '/404'}} className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition">
+                        
+                        <button onClick={() => { window.location.href = '/404' }} className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition">
                             Subscribe Now
                         </button>
                     </div>
                 </section>
-                <div className="bg-white">
-                    <section className="py-16 px-4 bg-gray-50">
+                <div className="bg-red-50">
+                    <section className="py-16 px-4 bg-red-200">
                         <div className="max-w-6xl mx-auto text-center mb-12">
                             <h2 className="text-3xl font-extrabold text-gray-900 mb-4 border-b-2 border-red-600 pb-2 inline-block">
                                 Editorial & Opinions
@@ -210,69 +214,69 @@ const Latest = () => {
                         </div>
 
 
-                        
+
                     </section>
 
 
-                    <section className="bg-blue-800 py-20 px-4">
-    <div className="max-w-6xl mx-auto text-center text-white">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 border-b-2 border-white pb-2 inline-block">
-            Watch Now: Exclusive Interviews
-        </h2>
-        <p className="text-blue-200 max-w-3xl mx-auto mb-10">
-            Dive deeper with our exclusive video interviews and documentary shorts, featuring leaders and experts from around the world.
-        </p>
+                    <section className="bg-blue-600 py-20 px-4">
+                        <div className="max-w-6xl mx-auto text-center text-white">
+                            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 border-b-2 border-white pb-2 inline-block">
+                                Watch Now: Exclusive Interviews
+                            </h2>
+                            <p className="text-blue-200 max-w-3xl mx-auto mb-10">
+                                Dive deeper with our exclusive video interviews and documentary shorts, featuring leaders and experts from around the world.
+                            </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
-            
-            {/* Main Video Feature */}
-            <div className="lg:col-span-2">
-                <div className="aspect-w-16 aspect-h-9 bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
-                    {/* Placeholder for Video Embed */}
-                    <div className="h-full flex items-center justify-center">
-                        
-                    </div>
-                </div>
-                <div className="mt-4">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                        Special Report: The Global Water Crisis - A Decade Ahead
-                    </h3>
-                    <p className="text-blue-200 text-sm">
-                        October 28, 2025 | 15:45 Runtime
-                    </p>
-                </div>
-            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
 
-            {/* Video Playlist/Sidebar */}
-            <div className="lg:col-span-1 bg-blue-700 p-6 rounded-lg shadow-xl">
-                <h4 className="text-xl font-bold mb-4 border-b border-blue-500 pb-2">
-                    More Videos
-                </h4>
-                <ul className="space-y-4">
-                    <li className="hover:text-blue-300 transition cursor-pointer">
-                        <p className="font-semibold">The Tech Stock Bubble: Reality or Hype?</p>
-                        <p className="text-xs text-blue-400">Finance & Technology</p>
-                    </li>
-                    <li className="hover:text-blue-300 transition cursor-pointer">
-                        <p className="font-semibold">Interview with the Secretary of State on Foreign Policy</p>
-                        <p className="text-xs text-blue-400">Politics</p>
-                    </li>
-                    <li className="hover:text-blue-300 transition cursor-pointer">
-                        <p className="font-semibold">Future of Food: Vertical Farming Explained</p>
-                        <p className="text-xs text-blue-400">CULINARY & INNOVATION</p>
-                    </li>
-                </ul>
-                <button  onClick={() => {window.location.href = '/404'}}
-                className="mt-6 w-full bg-white text-blue-800 font-semibold py-2 rounded-lg hover:bg-gray-200 transition">
-                    View All Multimedia
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-      
+                                {/* Main Video Feature */}
+                                <div className="lg:col-span-2">
+                                    <div className="aspect-w-16 aspect-h-9 bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
+                                        {/* Placeholder for Video Embed */}
+                                        <div className="h-full flex items-center justify-center">
 
-                    <section className="py-16 px-4 bg-white">
+                                        </div>
+                                    </div>
+                                    <div className="mt-4">
+                                        <h3 className="text-2xl font-bold text-white mb-2">
+                                            Special Report: The Global Water Crisis - A Decade Ahead
+                                        </h3>
+                                        <p className="text-blue-200 text-sm">
+                                            October 28, 2025 | 15:45 Runtime
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Video Playlist/Sidebar */}
+                                <div className="lg:col-span-1 bg-blue-700 p-6 rounded-lg shadow-xl">
+                                    <h4 className="text-xl font-bold mb-4 border-b border-blue-500 pb-2">
+                                        More Videos
+                                    </h4>
+                                    <ul className="space-y-4">
+                                        <li className="hover:text-blue-300 transition cursor-pointer">
+                                            <p className="font-semibold">The Tech Stock Bubble: Reality or Hype?</p>
+                                            <p className="text-xs text-blue-400">Finance & Technology</p>
+                                        </li>
+                                        <li className="hover:text-blue-300 transition cursor-pointer">
+                                            <p className="font-semibold">Interview with the Secretary of State on Foreign Policy</p>
+                                            <p className="text-xs text-blue-400">Politics</p>
+                                        </li>
+                                        <li className="hover:text-blue-300 transition cursor-pointer">
+                                            <p className="font-semibold">Future of Food: Vertical Farming Explained</p>
+                                            <p className="text-xs text-blue-400">CULINARY & INNOVATION</p>
+                                        </li>
+                                    </ul>
+                                    <button onClick={() => { window.location.href = '/404' }}
+                                        className="mt-6 w-full bg-white text-blue-800 font-semibold py-2 rounded-lg hover:bg-gray-200 transition">
+                                        View All Multimedia
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section className="py-16 px-4 bg-yellow-200">
                         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
 
                             {/* Left Column: Main Feature/Opinion */}
@@ -339,8 +343,8 @@ const Latest = () => {
                                 placeholder="Enter your email address"
                                 className="w-full md:w-80 px-5 py-3 rounded-lg text-gray-800 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                             />
-                            <button onClick={() => {window.location.href = '/404'}}
-                            className="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">
+                            <button onClick={() => { window.location.href = '/404' }}
+                                className="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">
                                 Sign Up for Free
                             </button>
                         </div>

@@ -21,6 +21,7 @@ import SingleBlog2 from "./pages/SingleBlog2.jsx";
 import SingleBlog3 from "./pages/SingleBlog3.jsx";
 import SingleBlog4 from "./pages/SingleBlog4.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import ExploreServices from "./components/ExploreServices.jsx";
 
 const router = createBrowserRouter([
   {
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
     path: "*",
     element: <App element={<NotFound />} />,
   },
+  {
+    path: "/explore-services",
+    element: <App element={<ExploreServices />} />,
+  } 
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Subscribe = () => {
   return (
-    <section className="subscribe bg-slate-800 mt-12 mb-4    rounded-lg py-10 px-4 flex flex-col items-center gap-3 relative overflow-hidden">
+    <section className="subscribe bg-slate-800  mb-4    rounded-lg py-10 px-4 flex flex-col items-center gap-3 relative overflow-hidden">
       <div className="flex flex-col items-center gap-3 relative z-10">
         <svg fill="white" viewBox="0 0 122 55" className="w-28">
           <path d="M80.265 5.637a1.563 1.563 0 000 3.125h.045a1.563 1.563 0 000-3.125h-.045zM59.345 43.791a1.563 1.563 0 000 3.126h24.623a1.563 1.563 0 100-3.126H59.345z"></path>
@@ -39,8 +39,7 @@ const Subscribe = () => {
             placeholder="Your email address"
           />
           <button onClick={() => {window.location.href = '/404';}}
-           className="bg-slate-800 px-4 max-md:py-2 text-white rounded-md" 
-           type="submit">
+           className="bg-slate-800 px-4 max-md:py-2 text-white rounded-md" type="submit">
             subscribe
           </button>
         </form>

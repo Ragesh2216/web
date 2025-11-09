@@ -13,7 +13,7 @@ import Subscribe from "../components/Subscribe";
 
 const SingleBlog3 = () => {
   return (
-    <main className=" mt-12 px-24 max-sm:px-4">
+    <main className="  mt-0 px-24 max-sm:px-4  bg-yellow-100">
       <section className="w-10/12 max-md:w-full mx-auto">
         <div className="blogHeader">
           <h1 className="text-5xl text-slate-800 max-sm:text-3xl max-sm:text-center font-semibold">
@@ -29,12 +29,12 @@ const SingleBlog3 = () => {
                 alt=""
               />
               <h4 className="text-base font-medium text-slate-800 hover:underline underline-offset-8">
-                <Link to="">Biswajit Saha</Link>
+                <Link to="">Ishan Sharma</Link>
               </h4>
             </div>
             <ul className="list-disc text-base text-neutral-600 flex items-center gap-8">
               <li>March 16, 2022</li>
-              <li>2 min read</li>
+              <li>20 min read</li>
             </ul>
           </div>
         </div>

@@ -6,7 +6,7 @@ const Authors = () => {
   const AuthorData = data.AuthorData;
   return (
     <div className="authors-bg">
-    <section className="mt-12 px-24 max-sm:px-4">
+    <section className=" px-24 max-sm:px-4">
       <h2 className="text-center text-5xl text-slate-800 font-semibold">
         Authors
       </h2>

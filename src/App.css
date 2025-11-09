@@ -140,7 +140,8 @@
 
 .my-about {
     /* mt-12 (48px top margin) */
-    margin-top: 3rem; 
+    margin-top: 0; 
+    color: #13f1a7;
 	background-image: url(./images/bg.webp);
 
     /* px-24 (96px horizontal padding) */
@@ -212,7 +213,8 @@ border-radius: 5px;
     
     /* 5. Add a label before the cell content */
     .about-sections-table td {
-        /* Remove the bottom border on cells since the row now has a border */
+
+      /* Remove the bottom border on cells since the row now has a border */
         border-bottom: none; 
         text-align: left; /* Aligns the data content to the right */
         padding-left: 50%; /* Makes room for the label on the left */

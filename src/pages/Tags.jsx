@@ -9,7 +9,7 @@ import Tag7 from "../images/tag-food-cover.webp";
 const Tags = () => {
   return (
     <section className="tags-bg">
-      <div className="mt-12 px-24 max-sm:px-4">
+      <div className="mt-2px-24 max-sm:px-4">
       <h2 className="text-center text-5xl text-slate-800 font-semibold">
         Tags
       </h2>

@@ -30,7 +30,7 @@ const ArchiveDop = ({ closeMenu }) => {
         id="archive-menu-button"
         onClick={toggleDropdown}
       >
-        Home
+        Home1
         <ExpandMoreOutlinedIcon className="-mr-1 ml-2 !h-5 !w-5" />
       </Link>
 
@@ -46,7 +46,7 @@ const ArchiveDop = ({ closeMenu }) => {
               tabIndex="-1"
               id="archive-menu-item-0"
             >
-              homepage2
+              home2
             </Link>
             </div>
           </div>

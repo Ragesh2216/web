@@ -148,7 +148,7 @@ const CheckoutPage = ({ planId, onBack }) => {
                 <h2 className="text-2xl font-bold text-red-600 mb-4">Error: Plan Not Found</h2>
                 <button 
                     onClick={() => onBack('home')} 
-                    className="mt-4 py-2 px-6 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition"
+                    className="mt-2 py-2 px-6 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition"
                 >
                     Back to Plans
                 </button>
@@ -193,7 +193,7 @@ const SubscriptionView = ({ handleSubscription }) => (
     <div className="max-w-7xl mx-auto pt-10 pb-20">
         
         {/* Header Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 bg-gradient-to-r from-violet-500 to-green-300">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
             Unlock Unlimited News & Features
           </h1>
@@ -276,7 +276,7 @@ const Subscription = () => {
 
 
   return (
-    <div className="font-sans bg-gray-50 min-h-screen p-4 sm:p-8">
+    <div className="font-sans bg-gradient-to-r from-violet-500 to-green-300 min-h-screen p-8 sm:p-8">
       {/* Global Message Box (Instead of alert()) */}
       {message && (
         <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 p-4 rounded-xl bg-indigo-600 text-white font-semibold shadow-2xl transition duration-300 animate-pulse">
