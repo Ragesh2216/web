@@ -5,19 +5,22 @@ const Contact = () => {
   return (
     <main className=" my-about">
       <section className="contact">
-        <h2 className="text-5xl text-slate-800 font-semibold  c">Contact Me</h2>
-        <p className="text-slate-800 text-lg mt-6">
+        <h2 className="text-5xl text-slate-800 font-semibold text-red-200">Contact Me</h2>
+        <p className="text-slate-800 text-white
+        mt-6">
           Hello! Do you have any question or suggestion about this site, or just
           want to say Hi? Send me a message using below form. I will get back to
           you as soon as possible.
         </p>
-        <form action="" className="w-full flex flex-col gap-4 mt-5">
+        <form action="/404" 
+        className="w-full flex flex-col gap-4 mt-5">
           <input
             type="text"
             className="border border-neutral-200 py-2 h-12 px-3 rounded-md"
             name="name"
             id="name"
             placeholder="Full Name"
+            required
           />
           <input
             type="email"
@@ -25,6 +28,7 @@ const Contact = () => {
             name="email"
             id="email"
             placeholder="Email"
+            required
           />
           <input
             type="text"
@@ -32,6 +36,7 @@ const Contact = () => {
             name="subject"
             id="subject"
             placeholder="Subject"
+            required
           />
           <textarea
             name="message"

@@ -98,6 +98,37 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+       {/* Connect Links */}
+        <div className="max-md:col-span-2 max-md:text-center md:text-center">
+  <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">
+    Address
+  </h5>
+
+  <p className="text-slate-100 text-sm leading-relaxed">
+    <span className="block font-medium text-white">The Stackly</span>
+    MMR COMPLEX,
+    Salem, Tamil Nadu ,
+    India,636008 .
+  </p>
+
+  <div className="mt-4 flex flex-col md:items-center gap-2 md:gap-4 text-sm">
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=MMR+COMPLEX,+Salem,+Tamil+Nadu+636008"
+      target="_blank"
+      rel="noreferrer"
+      className="text-sky-400 hover:text-sky-300 underline"
+    >
+      View on Google Maps
+    </a>
+    <a
+      href="mailto:info@thestackly.com"
+      className="text-slate-300 hover:text-white"
+    >
+      info@thestackly.com
+    </a>
+    
+  </div>
+</div>
 
       {/* Footer Bottom: Copyright and Social Icons */}
       {/* Added responsive horizontal padding to the content wrapper */}

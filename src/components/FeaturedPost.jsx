@@ -9,7 +9,7 @@ const FeaturedPost = () => {
   const latestBlogs = BlogPosts.filter((blog) => blog.posttype === "latest");
 
   return (
-    <section className="featuredPost mt-2 px-4 md:px-0fixed top-0 left-0 w-full shadow-md z-[9999]">
+    <section className="featuredPost mt-2 px-4 md:px-0 top-0 left-0 w-full shadow-md z-[9999]">
       {/* Featured Section */}
       <h2 className="text-2xl font-semibold border-b-4 w-fit border-b-blue-600 text-slate-800">
         Featured Posts

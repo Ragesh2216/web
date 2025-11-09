@@ -43,6 +43,7 @@ const SingleBlog3 = () => {
             src={techImg}
             className="w-full object-cover rounded-xl"
             alt=""
+             loading="lazy"
           />
         </div>
         <div className="blogContent mt-3">

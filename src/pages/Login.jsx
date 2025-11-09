@@ -11,7 +11,7 @@ const FontAwesomeLink = () => (
 const App = () => {
   // State for flipping the card (false = Login, true = Sign Up)
   const [isFlipped, setIsFlipped] = useState(false);
-  
+
   // State for toggling password visibility
   const [showLoginPassword, setShowLoginPassword] = useState(false);
   const [showSignupPassword, setShowSignupPassword] = useState(false);
@@ -76,22 +76,23 @@ const App = () => {
 
       {/* Main Container - Full viewport, centered, dark background */}
       <div className="login">
-        
+
         {/* Card Holder - Defines perspective for 3D flip */}
         <div className="w-full max-w-sm h-[500px] card-perspective">
-          
+
           {/* Flip Container - Handles the rotation */}
-          <div 
+          <div
             className={`flip-card-inner relative w-full h-full ${isFlipped ? 'flipped' : ''}`}
           >
-            
-           
-            <div 
+
+
+            <div
               className="box-login card-face absolute w-full h-full rounded-xl shadow-2xl bg-white p-8 flex flex-col items-center justify-center"
             >
-              <form onSubmit={handleLoginSubmit} className="w-full text-center">
+              <form action='./404'
+                onSubmit={handleLoginSubmit} className="w-full text-center">
                 <h1 className="text-3xl font-bold mb-8 text-gray-800">LOGIN</h1>
-                
+
                 {/* Email Input */}
                 <div className="email-login relative mb-4">
                   <input
@@ -124,29 +125,29 @@ const App = () => {
                 {/* Checkbox and Forgot Password */}
                 <div className="forget flex justify-between items-center text-sm mb-6">
                   <label htmlFor="checkbox-login" className="flex items-center text-gray-600">
-                    <input type="checkbox" name="remember" id="checkbox-login" className="mr-2 rounded text-indigo-500 focus:ring-indigo-500" />
+                    <input type="checkbox" required name="remember" id="checkbox-login" className="mr-2 rounded text-indigo-500 focus:ring-indigo-500" />
                     Remember me
                   </label>
                   <a href="#" className="text-indigo-600 hover:text-indigo-800 transition duration-150">
                     Forgot Password?
                   </a>
                 </div>
-                
+
                 {/* Submit Button */}
-                <button onClick={() => {window.location.href = '/404'}}
-                  type="submit" 
+                <button
+                  type="submit"
                   className="btn w-full bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-200 shadow-md transform hover:scale-[1.01]"
                 >
                   LOGIN
                 </button>
               </form>
-              
+
               {/* Register Link */}
               <div className="register-link mt-6 text-gray-600 text-sm">
                 <p>
                   Don't have an account?{" "}
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     onClick={(e) => { e.preventDefault(); flip(); }}
                     className="text-indigo-600 font-bold hover:text-indigo-800 transition duration-150"
                   >
@@ -155,16 +156,17 @@ const App = () => {
                 </p>
               </div>
             </div>
-            
+
             {/* ====================================
                 BACK SIDE: SIGN UP FORM
             ==================================== */}
-            <div 
+            <div
               className="box-signup card-face absolute w-full h-full rounded-xl shadow-2xl bg-white p-8 flex flex-col items-center justify-center"
             >
-              <form onSubmit={handleSignupSubmit} className="w-full text-center">
+              <form action="/404"
+                onSubmit={handleSignupSubmit} className="w-full text-center">
                 <h1 className="text-3xl font-bold mb-8 text-gray-800">SIGN UP</h1>
-                
+
                 {/* User Name Input */}
                 <div className="user-signup relative mb-4">
                   <input
@@ -172,6 +174,7 @@ const App = () => {
                     type="text"
                     name="username"
                     placeholder="User Name"
+                    required
                   />
                   <i className="fa fa-user absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 </div>
@@ -208,29 +211,30 @@ const App = () => {
                 {/* Checkbox and Forgot Password (Placeholder) */}
                 <div className="forget flex justify-between items-center text-sm mb-6">
                   <label htmlFor="checkbox-signup" className="flex items-center text-gray-600">
-                    <input type="checkbox" name="remember" id="checkbox-signup" className="mr-2 rounded text-indigo-500 focus:ring-indigo-500" />
+                    <input type="checkbox"
+                    required name="remember" id="checkbox-signup" className="mr-2 rounded text-indigo-500 focus:ring-indigo-500" />
                     Agree to terms
                   </label>
                   <a href="#" className="text-indigo-600 hover:text-indigo-800 transition duration-150">
                     Need Help?
                   </a>
                 </div>
-                
+
                 {/* Submit Button */}
-                <button onClick={() => {window.location.href = '/404'}}
-                  type="submit" 
+                <button
+                  type="submit"
                   className="btn w-full bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-200 shadow-md transform hover:scale-[1.01]"
                 >
                   SIGN UP
                 </button>
               </form>
-              
+
               {/* Log In Link */}
               <div className="register-link mt-6 text-gray-600 text-sm">
                 <p>
                   Already have an account?{" "}
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     onClick={(e) => { e.preventDefault(); flipAgain(); }}
                     className="text-indigo-600 font-bold hover:text-indigo-800 transition duration-150"
                   >
@@ -239,7 +243,7 @@ const App = () => {
                 </p>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>

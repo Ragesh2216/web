@@ -140,7 +140,7 @@
 
 .my-about {
     /* mt-12 (48px top margin) */
-    margin-top: 0; 
+    
     color: #13f1a7;
 	background-image: url(./images/bg.webp);
 
@@ -164,6 +164,7 @@
 border-radius: 5px;
     /* w-1/2 (width: 50%) */
     width: 50%;
+    color: #10b981;
     
     /* flex flex-col (display: flex; flex-direction: column) */
     display: flex;
@@ -178,6 +179,7 @@ border-radius: 5px;
 /* Applies when the screen width is less than the medium breakpoint (768px) */
 @media (max-width: 767px) { 
     .contact {
+      margin-top: 0;
         /* w-11/12 (width: 91.6667%) */
         width: 86.6667%; 
     }
@@ -186,6 +188,7 @@ border-radius: 5px;
     /* 1. Force the container to take full width and remove borders/shadow */
     .about-sections-table {
         border: none;
+      
         box-shadow: none;
     }
 

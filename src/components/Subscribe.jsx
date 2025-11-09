@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Subscribe = () => {
   return (
     <section className="subscribe bg-slate-800  mb-4    rounded-lg py-10 px-4 flex flex-col items-center gap-3 relative overflow-hidden">
@@ -21,7 +21,7 @@ const Subscribe = () => {
           inbox.
         </p>
         <form
-          action=""
+          action="./404"
           className="mt-4 bg-white p-4 max-md:flex-col rounded-md flex gap-3 w-3/4 max-sm:w-full"
         >
           <input
@@ -30,6 +30,7 @@ const Subscribe = () => {
             name="name"
             id="name"
             placeholder="Your Name"
+                 required
           />
           <input
             type="email"
@@ -37,9 +38,10 @@ const Subscribe = () => {
             name="email"
             id="email"
             placeholder="Your email address"
+            required
           />
-          <button onClick={() => {window.location.href = '/404';}}
-           className="bg-slate-800 px-4 max-md:py-2 text-white rounded-md" type="submit">
+          <button 
+           className="bg-slate-800 px-4 max-md:py-2 text-white rounded-md" type="submit"> 
             subscribe
           </button>
         </form>

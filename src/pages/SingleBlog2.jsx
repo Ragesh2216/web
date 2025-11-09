@@ -29,6 +29,7 @@ const SingleBlog2 = () => {
                 height={30}
                 className="rounded-full"
                 alt=""
+                 loading="lazy"
               />
               <h4 className="text-base font-medium text-slate-800 hover:underline underline-offset-8">
                 <Link to="">Surabhi Gupta</Link>
