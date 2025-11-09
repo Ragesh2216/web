@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 const FeaturedPostCard = ({ img, title, tag, desc, date, link }) => {
   return (
-    <article className="card flex max-md:flex-col shadow-[0px_3px_8px_0px_rgba(30,41,59,0.24)] rounded-xl p-4 gap-5 bg-white hover:shadow-lg transition-shadow duration-300">
+    <article className="card flex max-md:flex-col shadow-[0px_3px_8px_0px_rgba(30,41,59,0.24)] rounded-xl p-4 gap-5  
+    bg-gradient-to-r from-[#bde03c] to-[#0a35f5]
+    hover:shadow-lg transition-shadow duration-300">
       
       {/* Image Section */}
       <div className="img w-80 max-md:w-full h-56 flex-shrink-0">

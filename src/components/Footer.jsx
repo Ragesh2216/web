@@ -80,10 +80,10 @@ const Footer = () => {
           <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">Connect</h5>
           <ul className="space-y-3">
             {[
-              {  to: "/twitter", label: "Twitter" },
-              { to: "/facebook", label: "Facebook" },
+              
+              { to: "/google", label: "google" },
               {  to: "/linkedin", label: "Linkedin" },
-              {  to: "/github", label: "Github" },
+              {  to: "/whatsapp", label: "whatsapp" },
             ].map((link, index) => (
               <li key={index}>
                 {/* FIXED: Replaced <Link> with standard <a> tag */}

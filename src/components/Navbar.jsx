@@ -28,7 +28,8 @@ const Navbar = ({closemenu}) => {
       fixed top-0 left-0 w-full shadow-md z-[9999]">
 
         <nav
-          className="flex justify-between items-center px-6 py-3 max-w-7xl mx-auto "
+          className="flex justify-between items-center
+           px-6 py-3 max-w-7xl mx-auto "
           ref={navRef}
         >
           {/* Logo */}
@@ -65,13 +66,13 @@ const Navbar = ({closemenu}) => {
 
           {/* Navigation links */}
           <ul
-            className={`md:flex ${isOpen ? "flex" : "hidden" 
-              } flex-col gap-4 md:flex-row md:gap-6 items-center text-lg text-slate-800 
-          font-medium max-md:absolute max-md:right-[15%] max-md:top-[13%] 
-          w-40 md:w-fit max-md:py-4 max-md:bg-white max-md:rounded-lg 
-          max-md:shadow-lg max-md:border 
-           max-md:border-slate-100`}
-          >
+         className={`${isOpen ? "flex" : "hidden"} md:flex
+  flex-col md:flex-row gap-4 md:gap-1 lg:gap-6 items-center text-md text-slate-800 
+  font-medium 
+  /* Mobile styles */
+  absolute right-2 top-full w-48 py-2 bg-white rounded-lg shadow-lg border border-slate-100 z-50
+  /* Tablet/Desktop styles */
+  md:static md:w-auto md:py-0 md:bg-transparent md:rounded-none md:shadow-none md:border-none`}   >
             <li>
               <ArchiveDop closeMenu={closeMenu} />
             </li>

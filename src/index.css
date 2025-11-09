@@ -77,9 +77,9 @@
 }
 
 .primary-cta-button {
-  background: linear-gradient(to right, #fc7fd2, #13f1a7);
+  background: linear-gradient(to right, #0a35f5, #bde03c);
   padding: 0.75rem 1.5rem;
-  color: white;
+  color: rgb(47, 247, 20);
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
