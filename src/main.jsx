@@ -101,6 +101,7 @@ const router = createBrowserRouter([
     path: "/explore-services",
     element: <App element={<ExploreServices />} />,
   } 
+
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

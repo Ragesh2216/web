@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Subscribe from "../components/Subscribe";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState(0);
 
   const sections = [
@@ -286,19 +287,20 @@ const About = () => {
               Join thousands of readers who trust us for accurate, timely, and impactful journalism.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-  <button 
-    onClick={() => window.location.href = './404'}
-    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
-  >
-    Subscribe to Our Newsletter
-  </button>
-  <button 
-    onClick={() => window.location.href = './404'}
-    className="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
-  >
-    Contact Our Team
-  </button>
-</div>
+              <button 
+                onClick={() => navigate('/subscription')}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+              >
+                Subscribe to Our Newsletter
+              </button>
+              
+              <button 
+                onClick={() => navigate('/contact')}
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 flex items-center justify-center gap-2"
+              >
+                Contact Our Team
+              </button>
+            </div>
           </div>
         </section>
       </main>
