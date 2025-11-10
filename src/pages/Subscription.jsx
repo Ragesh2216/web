@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Mock Lucide-style Icons (for a single-file mandate)
 const Check = (props) => (
@@ -24,7 +25,6 @@ const pricingTiers = [
     ],
     highlight: false,
     buttonText: 'Subscribe Now',
-    onClick: () => { window.location.href = '/404'; },
   },
   {
     id: 'premium',
@@ -76,7 +76,6 @@ const FeatureItem = ({ text, included }) => {
   );
 };
 
-// Updated PlanCard: Added type="button" to prevent accidental form submission
 const PlanCard = ({ plan, onSelect }) => {
   const isHighlighted = plan.highlight;
 
@@ -95,8 +94,6 @@ const PlanCard = ({ plan, onSelect }) => {
     : 'bg-gray-100 hover:bg-gray-200 text-indigo-600 border border-indigo-600';
 
   return (
-    
-    
     <div className={`flex flex-col rounded-xl overflow-hidden transform ${cardClasses} transition-all duration-300`}>
       
       {/* Header */}
@@ -122,7 +119,6 @@ const PlanCard = ({ plan, onSelect }) => {
               key={index} 
               text={feature.text} 
               included={feature.included}
-              onClick={() => {window.location.href = '/404'}} 
             />
           ))}
         </ul>
@@ -130,7 +126,7 @@ const PlanCard = ({ plan, onSelect }) => {
         {/* Button: Added type="button" to stop implicit form submission/navigation */}
         <button 
           type="button" 
-          onClick={() => {window.location.href = '/404'}}
+          onClick={() => onSelect(plan.id)}
           className={`mt-6 w-full py-3 rounded-lg text-lg font-semibold transition duration-200 ${buttonClasses}`}>
           {plan.buttonText}
         </button>
@@ -140,15 +136,16 @@ const PlanCard = ({ plan, onSelect }) => {
 };
 
 // Checkout Component (Mock view for demonstration)
-const CheckoutPage = ({ planId, onBack }) => {
+const CheckoutPage = ({ planId, onBack, onComplete }) => {
     const plan = pricingTiers.find(p => p.id === planId);
+    const navigate = useNavigate();
     
     if (!plan) {
         return (
             <div className="text-center p-20">
                 <h2 className="text-2xl font-bold text-red-600 mb-4">Error: Plan Not Found</h2>
                 <button 
-                    onClick={() => {window.location.href = '/404'}} 
+                    onClick={onBack}
                     className="mt-4 py-2 px-6 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition">
                     Back to Plans
                 </button>
@@ -161,7 +158,7 @@ const CheckoutPage = ({ planId, onBack }) => {
             <h1 className="text-3xl font-extrabold text-gray-900 mb-6 border-b pb-4">
                 Checkout for {plan.name}
             </h1>
-            <p className="text-gray-700 mb-4">You are about to subscribe to the **{plan.name}** plan for **${plan.price}/month**.</p>
+            <p className="text-gray-700 mb-4">You are about to subscribe to the <strong>{plan.name}</strong> plan for <strong>${plan.price}/month</strong>.</p>
             <ul className="space-y-3 mb-8 text-sm text-gray-600 bg-gray-50 p-4 rounded-lg">
                 <li className="font-semibold">Key Features:</li>
                 {plan.features.filter(f => f.included).map((feature, index) => (
@@ -171,12 +168,15 @@ const CheckoutPage = ({ planId, onBack }) => {
                 ))}
             </ul>
             <div className="flex justify-between items-center pt-4 border-t">
-                <button onClick={() => {window.location.href = '/404'}}
+                <button onClick={onBack}
                     className="text-indigo-600 hover:text-indigo-800 transition text-sm">
                     &larr; Change Plan
                 </button>
                 <button 
-               onClick={() => {window.location.href = '/404'}}
+                    onClick={() => {
+                        onComplete();
+                        navigate('/thank-you');
+                    }}
                     className="py-3 px-8 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition shadow-md">
                     Complete Payment
                 </button>
@@ -184,7 +184,6 @@ const CheckoutPage = ({ planId, onBack }) => {
         </div>
     );
 }
-
 
 const SubscriptionView = ({ handleSubscription }) => (
     <div className="max-w-7xl mx-auto pt-10 pb-20">
@@ -202,10 +201,9 @@ const SubscriptionView = ({ handleSubscription }) => (
         {/* Pricing Grid */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-10">
           {pricingTiers.map((plan) => (
-            // Pass the mock function down as onSelect
             <PlanCard 
               key={plan.id} 
-              plan={{...plan}} 
+              plan={plan} 
               onSelect={handleSubscription}
             />
           ))}
@@ -220,17 +218,12 @@ const SubscriptionView = ({ handleSubscription }) => (
     </div>
 );
 
-
-// Main App Component with basic routing logic
+// Main App Component with proper routing logic
 const Subscription = () => {
-  // State for simple navigation (switch/case routing)
-  const [currentView, setCurrentView] = useState('./4o4');
+  const navigate = useNavigate();
+  const [currentView, setCurrentView] = useState('home');
   const [selectedPlanId, setSelectedPlanId] = useState(null);
-
-  // State for message box
   const [message, setMessage] = useState('');
-  
-  // Mock Firebase readiness for consistency
   const [isAuthReady, setIsAuthReady] = useState(false); 
 
   // Function to handle moving to checkout
@@ -238,23 +231,24 @@ const Subscription = () => {
     setSelectedPlanId(planId);
     setCurrentView('checkout');
     setMessage(`Loading checkout for ${planId}...`);
-    setTimeout(() => setMessage(''), 1500); // Clear message after 1.5 seconds
+    setTimeout(() => setMessage(''), 1500);
   }
-  
-  // Function to simulate user interaction and prevent 404
-  const handleViewChange = (newView) => {
-    if (newView === 'purchase-complete') {
-        setMessage(`🎉 Purchase complete! Thank you for subscribing to ${selectedPlanId}!`);
-        setTimeout(() => setMessage(''), 5000);
-        setCurrentView('home');
-        setSelectedPlanId(null);
-        return;
-    }
-    setCurrentView(newView);
+
+  // Function to handle purchase completion
+  const handlePurchaseComplete = () => {
+    setMessage(`🎉 Purchase complete! Thank you for subscribing to ${selectedPlanId}!`);
+    setTimeout(() => setMessage(''), 5000);
+    setCurrentView('home');
     setSelectedPlanId(null);
   }
 
-  // Mock Firebase initialization hook (using useEffect to run once)
+  // Function to go back to subscription view
+  const handleBackToPlans = () => {
+    setCurrentView('home');
+    setSelectedPlanId(null);
+  }
+
+  // Mock Firebase initialization hook
   useEffect(() => {
     setIsAuthReady(true);
   }, []);
@@ -263,18 +257,21 @@ const Subscription = () => {
   let content;
   switch (currentView) {
       case 'checkout':
-          content = <CheckoutPage planId={selectedPlanId} onBack={() => {window.location.href = '/404'}} />;
+          content = <CheckoutPage 
+            planId={selectedPlanId} 
+            onBack={handleBackToPlans} 
+            onComplete={handlePurchaseComplete}
+          />;
           break;
       case 'home':
       default:
-          content = <SubscriptionView handleSubscription={() => {window.location.href = '/404'}} />;
+          content = <SubscriptionView handleSubscription={handleSubscription} />;
           break;
   }
 
-
   return (
-    <div className="font-sans bg-gray-50 min-h-screen p-4 sm:p-8">
-      {/* Global Message Box (Instead of alert()) */}
+    <div className="font-sans bg-gray-50 min-h-screen p-4 sm:p-8 pt-24">
+      {/* Global Message Box */}
       {message && (
         <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 p-4 rounded-xl bg-indigo-600 text-white font-semibold shadow-2xl transition duration-300 animate-pulse">
           {message}
