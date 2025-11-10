@@ -14,7 +14,7 @@ import Subscribe from "../components/Subscribe";
 
 const SingleBlog4 = () => {
   return (
-    <main className="mt-0 px-4 sm:px-6 lg:px-8 py-12 bg-green-50">
+    <main className="mt-8 px-4 sm:px-6 lg:px-8 py-12 bg-green-50">
       <section className="w-full max-w-4xl mx-auto">
         {/* Blog Header */}
         <div className="blogHeader text-center sm:text-left">
