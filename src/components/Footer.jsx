@@ -79,8 +79,8 @@ const Footer = () => {
         <div className="max-md:col-span-2 max-md:text-center md:text-left">
           <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">Connect</h5>
           <ul className="space-y-3">
-            {[
-              
+            {[{ to: "/twitter", label: "twitter" },
+              {  to: "/instagram", label: "instagram" },
               { to: "/google", label: "google" },
               {  to: "/linkedin", label: "Linkedin" },
               {  to: "/whatsapp", label: "whatsapp" },
@@ -134,26 +134,6 @@ const Footer = () => {
       {/* Added responsive horizontal padding to the content wrapper */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-gray-400">
         
-        {/* Social Links Container */}
-        <div className="socialLinkContainer flex space-x-4 items-center mb-4 sm:mb-0">
-          <h5 className="text-sm uppercase font-medium tracking-wider text-white">Follow:</h5>
-          <ul className="flex space-x-3">
-            {[
-              {  to: "/twitter", Icon: TwitterIcon },
-              { to: "/facebook", Icon: FacebookIcon },
-              { to: "/instagram", Icon: InstagramIcon },
-              {  to: "/github", Icon: GitHubIcon },
-            ].map((social, index) => (
-              <li key={index}>
-                {/* FIXED: Replaced <Link> with standard <a> tag */}
-                <a href={social.to}>
-                  {/* Styled icons with hover animation */}
-                  <social.Icon className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-xl" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
         
         {/* Copyright Text */}
         <p className="text-sm">
