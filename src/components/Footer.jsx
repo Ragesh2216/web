@@ -75,6 +75,7 @@ const Footer = () => {
           </ul>
         </div>
         
+<<<<<<< HEAD
         {/* Connect Links */}
         <div className="max-md:col-span-2 max-md:text-center md:text-left">
           <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">Connect</h5>
@@ -98,6 +99,9 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+=======
+        
+>>>>>>> 6533a11193f16bd7c5b07a54a96090e48201cc1a
        {/* Connect Links */}
         <div className="max-md:col-span-2 max-md:text-center md:text-center">
   <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">
