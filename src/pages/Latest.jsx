@@ -355,54 +355,6 @@ const Latest = () => {
                 </div>
             </section>
 
-            {/* Video Section with Colorful Background */}
-            <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-600 py-20 px-4 relative overflow-hidden">
-                <FloatingParticles />
-                <div className="max-w-6xl mx-auto text-center text-white relative z-10">
-                    <h2 className="text-3xl md:text-4xl font-extrabold mb-4 border-b-2 border-white pb-2 inline-block animate-fade-in-up">
-                        Watch Now: Exclusive Interviews
-                    </h2>
-                    <p className="text-blue-200 max-w-3xl mx-auto mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-                        Dive deeper with our exclusive video interviews and documentary shorts.
-                    </p>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
-                        {/* Main Video Feature */}
-                        <div className="lg:col-span-2 animate-scale-in">
-                            <div className="aspect-w-16 aspect-h-9 bg-gradient-to-br from-gray-900 to-gray-700 rounded-lg overflow-hidden shadow-2xl relative">
-                                <div className="h-64 flex items-center justify-center text-white text-xl font-bold">
-                                    Video Player Placeholder
-                                </div>
-                                {/* Animated play button */}
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center animate-pulse cursor-pointer hover:scale-110 transition-transform duration-300">
-                                        <div className="w-0 h-0 border-l-[20px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-2"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Video Playlist/Sidebar */}
-                        <div className="lg:col-span-1 bg-blue-700 p-6 rounded-lg shadow-xl animate-slide-in-right">
-                            <h4 className="text-xl font-bold mb-4 border-b border-blue-500 pb-2">
-                                More Videos
-                            </h4>
-                            <ul className="space-y-4">
-                                {['The Tech Stock Bubble', 'Foreign Policy Interview', 'Future of Food'].map((title, index) => (
-                                    <li 
-                                        key={index}
-                                        className="hover:text-blue-300 transition-all duration-300 transform hover:translate-x-2 cursor-pointer p-2 rounded hover:bg-blue-600"
-                                    >
-                                        <p className="font-semibold">{title}</p>
-                                        <p className="text-xs text-blue-400">Category</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* Newsletter Section with Animated Form */}
             <section className="bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700 py-16 px-4 relative overflow-hidden animate-color-shift">
                 <FloatingParticles />

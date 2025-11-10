@@ -118,7 +118,7 @@ const Login = () => {
             <div className="box-login mt-12 card-face absolute w-full h-full rounded-3xl p-8 flex flex-col items-center justify-center glow-effect">
               <div className="w-full max-w-xs animate-fadeInUp">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-16">
                   <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent mb-2">
                     Welcome Back
                   </h1>
@@ -172,7 +172,7 @@ const Login = () => {
                       />
                       Remember me
                     </label>
-                    <a href="#" className="text-purple-300 hover:text-purple-200 transition-colors duration-200 font-medium">
+                    <a href="./404" className="text-purple-300 hover:text-purple-200 transition-colors duration-200 font-medium">
                       Forgot Password?
                     </a>
                   </div>
@@ -211,10 +211,10 @@ const Login = () => {
             </div>
 
             {/* SIGN UP SIDE */}
-            <div className="box-signup card-face absolute w-full h-full  mt-28 rounded-3xl p-3 flex flex-col items-center justify-center glow-effect">
+            <div className="box-signup card-face  mt-4 absolute w-full h-full  mt-12 rounded-3xl p-3 flex flex-col items-center justify-center glow-effect">
               <div className="w-full max-w-xs animate-fadeInUp">
                 {/* Header */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-16">
                   <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent mb-6">
                     Join Us
                   </h1>
