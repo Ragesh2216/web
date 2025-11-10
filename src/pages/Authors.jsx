@@ -5,10 +5,10 @@ const Authors = () => {
   const AuthorData = data.AuthorData;
   return (
     <div className="authors-bg">
-      <section className="px-4 sm:px-8 lg:px-28 py-16">
+      <section className="px-8 sm:px- lg:px-28 py-16">
         {/* Heading with line */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-slate-800 font-semibold mb-4">
+          <h2 className="text-4xl mt-8 md:text-2xl lg:text-5xl text-slate-800 font-semibold mb-1">
             Meet Our Authors
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
