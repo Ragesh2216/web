@@ -1,249 +1,345 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-// Load Font Awesome (for icons)
-const FontAwesomeLink = () => (
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-);
-
-const App = () => {
-  // State for flipping the card (false = Login, true = Sign Up)
+const Login = () => {
   const [isFlipped, setIsFlipped] = useState(false);
-
-  // State for toggling password visibility
   const [showLoginPassword, setShowLoginPassword] = useState(false);
   const [showSignupPassword, setShowSignupPassword] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // --- Handlers for Flipping ---
-  const flip = () => setIsFlipped(true); // Switch to Sign Up
-  const flipAgain = () => setIsFlipped(false); // Switch back to Login
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
-  // --- Handlers for Password Toggling ---
+  const flip = () => setIsFlipped(true);
+  const flipAgain = () => setIsFlipped(false);
+
   const toggleLoginPassword = () => setShowLoginPassword(prev => !prev);
   const toggleSignupPassword = () => setShowSignupPassword(prev => !prev);
 
-  // --- Handlers for Form Submission (Placeholder) ---
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    console.log('Login submitted! (Not implemented)');
+    console.log('Login submitted!');
   };
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    console.log('Sign Up submitted! (Not implemented)');
+    console.log('Sign Up submitted!');
   };
 
-  // Custom styles for 3D card flip effects, required as Tailwind doesn't fully support these properties
   const customStyles = `
+    .auth-container {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
     .card-perspective {
-        perspective: 1000px;
+      perspective: 1500px;
     }
     .flip-card-inner {
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
     }
     .flip-card-inner.flipped {
-        transform: rotateY(180deg);
+      transform: rotateY(180deg);
     }
     .card-face {
-        backface-visibility: hidden;
+      backface-visibility: hidden;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .box-signup {
-        transform: rotateY(180deg);
+      transform: rotateY(180deg);
     }
-    /* Mobile-first adjustments for input focus */
-    .inpt:focus + .fa {
-        color: #8b5cf6; /* Indigo-500 equivalent */
+    .floating-element {
+      animation: float 6s ease-in-out infinite;
     }
-    /* Style the eye icon to be clickable */
-    .password-toggle-icon {
-        cursor: pointer;
-        transition: color 0.2s;
-        z-index: 10;
+    .floating-element-2 {
+      animation: float 8s ease-in-out infinite;
+      animation-delay: 1s;
     }
-    .password-toggle-icon:hover {
-        color: #8b5cf6;
+    .floating-element-3 {
+      animation: float 10s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .glow-effect {
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    }
+    .glow-effect:hover {
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+    }
+    .input-glow:focus {
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
     }
   `;
 
   return (
     <>
-      <FontAwesomeLink />
-      {/* Inject custom CSS */}
       <style>{customStyles}</style>
+      
+      <div className="auth-container min-h-screen flex   items-center justify-center p-4 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="floating-element absolute top-1/4 left-1/4 w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-20 blur-xl"></div>
+          <div className="floating-element-2 absolute top-3/4 right-1/4 w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-20 blur-xl"></div>
+          <div className="floating-element-3 absolute top-1/2 left-3/4 w-24 h-24 bg-gradient-to-r from-green-400 to-teal-400 rounded-full opacity-20 blur-xl"></div>
+          <div className="floating-element absolute top-2/3 left-1/6 w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-20 blur-xl"></div>
+        </div>
 
-      {/* Main Container - Full viewport, centered, dark background */}
-      <div className="login">
-
-        {/* Card Holder - Defines perspective for 3D flip */}
-        <div className="w-full max-w-sm h-[500px] card-perspective">
-
-          {/* Flip Container - Handles the rotation */}
-          <div
-            className={`flip-card-inner relative w-full h-full ${isFlipped ? 'flipped' : ''}`}
-          >
-
-
-            <div
-              className="box-login card-face absolute w-full h-full rounded-xl shadow-2xl bg-white p-8 flex flex-col items-center justify-center"
-            >
-              <form action='./404'
-                onSubmit={handleLoginSubmit} className="w-full text-center">
-                <h1 className="text-3xl font-bold mb-8 text-gray-800">LOGIN</h1>
-
-                {/* Email Input */}
-                <div className="email-login relative mb-4">
-                  <input
-                    className="inpt w-full p-3 pl-10 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    required
-                  />
-                  <i className="fa fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        {/* Main Card Container */}
+        <div className={`w-full max-w-md card-perspective transition-all duration-1000 transform ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          
+          {/* Flip Container */}
+          <div className={`flip-card-inner relative w-full h-[600px] ${isFlipped ? 'flipped' : ''}`}>
+            
+            {/* LOGIN SIDE */}
+            <div className="box-login mt-20 card-face absolute w-full h-full rounded-3xl p-8 flex flex-col items-center justify-center glow-effect">
+              <div className="w-full max-w-xs animate-fadeInUp">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent mb-2">
+                    Welcome Back
+                  </h1>
+                  <p className="text-white/70 text-sm">
+                    Sign in to your account to continue
+                  </p>
                 </div>
 
-                {/* Password Input */}
-                <div className="password-login relative mb-6">
-                  <input
-                    className="inpt w-full p-3 pl-10 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150"
-                    type={showLoginPassword ? "text" : "password"}
-                    name="password"
-                    id="password-login"
-                    placeholder="Password"
-                    required
-                  />
-                  <i className="fa fa-lock absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                  <i
-                    className={`fa absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 password-toggle-icon ${showLoginPassword ? 'fa-eye' : 'fa-eye-slash'}`}
-                    onClick={toggleLoginPassword}
-                  />
-                </div>
+                <form onSubmit={handleLoginSubmit} className="space-y-6">
+                  {/* Email Input */}
+                  <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <i className="fa fa-envelope text-white/60 group-focus-within:text-purple-300 transition-colors duration-200" />
+                    </div>
+                    <input
+                      className="w-full pl-10 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:border-purple-400 input-glow transition-all duration-200 backdrop-blur-sm"
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
 
-                {/* Checkbox and Forgot Password */}
-                <div className="forget flex justify-between items-center text-sm mb-6">
-                  <label htmlFor="checkbox-login" className="flex items-center text-gray-600">
-                    <input type="checkbox" required name="remember" id="checkbox-login" className="mr-2 rounded text-indigo-500 focus:ring-indigo-500" />
-                    Remember me
-                  </label>
-                  <a href="#" className="text-indigo-600 hover:text-indigo-800 transition duration-150">
-                    Forgot Password?
-                  </a>
-                </div>
+                  {/* Password Input */}
+                  <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <i className="fa fa-lock text-white/60 group-focus-within:text-purple-300 transition-colors duration-200" />
+                    </div>
+                    <input
+                      className="w-full pl-10 pr-12 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:border-purple-400 input-glow transition-all duration-200 backdrop-blur-sm"
+                      type={showLoginPassword ? "text" : "password"}
+                      name="password"
+                      placeholder="Password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={toggleLoginPassword}
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center password-toggle-icon"
+                    >
+                      <i className={`fa text-white/60 hover:text-purple-300 transition-colors duration-200 ${showLoginPassword ? 'fa-eye' : 'fa-eye-slash'}`} />
+                    </button>
+                  </div>
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="btn w-full bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-200 shadow-md transform hover:scale-[1.01]"
-                >
-                  LOGIN
-                </button>
-              </form>
+                  {/* Remember Me & Forgot Password */}
+                  <div className="flex justify-between items-center text-sm">
+                    <label className="flex items-center text-white/70 cursor-pointer hover:text-white transition-colors duration-200">
+                      <input 
+                        type="checkbox" 
+                        className="mr-2 rounded bg-white/10 border-white/20 text-purple-500 focus:ring-purple-400"
+                      />
+                      Remember me
+                    </label>
+                    <a href="#" className="text-purple-300 hover:text-purple-200 transition-colors duration-200 font-medium">
+                      Forgot Password?
+                    </a>
+                  </div>
 
-              {/* Register Link */}
-              <div className="register-link mt-6 text-gray-600 text-sm">
-                <p>
-                  Don't have an account?{" "}
-                  <a
-                    href="#"
-                    onClick={(e) => { e.preventDefault(); flip(); }}
-                    className="text-indigo-600 font-bold hover:text-indigo-800 transition duration-150"
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-xl"
                   >
-                    Sign Up
-                  </a>
-                </p>
+                    SIGN IN
+                  </button>
+                </form>
+
+                {/* Divider */}
+                <div className="relative flex items-center my-6">
+                  <div className="flex-grow border-t border-white/20"></div>
+                  <span className="flex-shrink mx-4 text-white/60 text-sm">or continue with</span>
+                  <div className="flex-grow border-t border-white/20"></div>
+                </div>
+
+                {/* Social Login */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <button className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl transition-all duration-200 border border-white/20 hover:border-white/30">
+                    <i className="fa fa-google text-red-400" />
+                    <span className="text-sm font-medium">Google</span>
+                  </button>
+                  <button className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl transition-all duration-200 border border-white/20 hover:border-white/30">
+                    <i className="fa fa-github" />
+                    <span className="text-sm font-medium">GitHub</span>
+                  </button>
+                </div>
+
+                {/* Sign Up Link */}
+                <div className="text-center">
+                  <p className="text-white/70 text-sm">
+                    Don't have an account?{" "}
+                    <button
+                      onClick={flip}
+                      className="text-purple-300 font-semibold hover:text-purple-200 transition-colors duration-200 underline"
+                    >
+                      Sign up now
+                    </button>
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* ====================================
-                BACK SIDE: SIGN UP FORM
-            ==================================== */}
-            <div
-              className="box-signup card-face absolute w-full h-full rounded-xl shadow-2xl bg-white p-8 flex flex-col items-center justify-center"
-            >
-              <form action="/404"
-                onSubmit={handleSignupSubmit} className="w-full text-center">
-                <h1 className="text-3xl font-bold mb-8 text-gray-800">SIGN UP</h1>
-
-                {/* User Name Input */}
-                <div className="user-signup relative mb-4">
-                  <input
-                    className="inpt w-full p-3 pl-10 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150"
-                    type="text"
-                    name="username"
-                    placeholder="User Name"
-                    required
-                  />
-                  <i className="fa fa-user absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            {/* SIGN UP SIDE */}
+            <div className="box-signup card-face absolute w-full h-full rounded-3xl p-8 flex flex-col items-center justify-center glow-effect">
+              <div className="w-full max-w-xs animate-fadeInUp">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent mb-2">
+                    Join Us
+                  </h1>
+                  <p className="text-white/70 text-sm">
+                    Create your account to get started
+                  </p>
                 </div>
 
-                {/* Email Input */}
-                <div className="email-signup relative mb-4">
-                  <input
-                    className="inpt w-full p-3 pl-10 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    required
-                  />
-                  <i className="fa fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                </div>
+                <form onSubmit={handleSignupSubmit} className="space-y-6">
+                  {/* Username Input */}
+                  <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <i className="fa fa-user text-white/60 group-focus-within:text-cyan-300 transition-colors duration-200" />
+                    </div>
+                    <input
+                      className="w-full pl-10 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:border-cyan-400 input-glow transition-all duration-200 backdrop-blur-sm"
+                      type="text"
+                      name="username"
+                      placeholder="Full Name"
+                      required
+                    />
+                  </div>
 
-                {/* Password Input */}
-                <div className="password-signup relative mb-6">
-                  <input
-                    className="inpt w-full p-3 pl-10 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150"
-                    type={showSignupPassword ? "text" : "password"}
-                    name="password"
-                    id="password-signup"
-                    placeholder="Password"
-                    required
-                  />
-                  <i className="fa fa-lock absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                  <i
-                    className={`fa absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 password-toggle-icon ${showSignupPassword ? 'fa-eye' : 'fa-eye-slash'}`}
-                    onClick={toggleSignupPassword}
-                  />
-                </div>
+                  {/* Email Input */}
+                  <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <i className="fa fa-envelope text-white/60 group-focus-within:text-cyan-300 transition-colors duration-200" />
+                    </div>
+                    <input
+                      className="w-full pl-10 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:border-cyan-400 input-glow transition-all duration-200 backdrop-blur-sm"
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
 
-                {/* Checkbox and Forgot Password (Placeholder) */}
-                <div className="forget flex justify-between items-center text-sm mb-6">
-                  <label htmlFor="checkbox-signup" className="flex items-center text-gray-600">
-                    <input type="checkbox"
-                    required name="remember" id="checkbox-signup" className="mr-2 rounded text-indigo-500 focus:ring-indigo-500" />
-                    Agree to terms
-                  </label>
-                  <a href="#" className="text-indigo-600 hover:text-indigo-800 transition duration-150">
-                    Need Help?
-                  </a>
-                </div>
+                  {/* Password Input */}
+                  <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <i className="fa fa-lock text-white/60 group-focus-within:text-cyan-300 transition-colors duration-200" />
+                    </div>
+                    <input
+                      className="w-full pl-10 pr-12 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:border-cyan-400 input-glow transition-all duration-200 backdrop-blur-sm"
+                      type={showSignupPassword ? "text" : "password"}
+                      name="password"
+                      placeholder="Create Password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={toggleSignupPassword}
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center password-toggle-icon"
+                    >
+                      <i className={`fa text-white/60 hover:text-cyan-300 transition-colors duration-200 ${showSignupPassword ? 'fa-eye' : 'fa-eye-slash'}`} />
+                    </button>
+                  </div>
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="btn w-full bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-200 shadow-md transform hover:scale-[1.01]"
-                >
-                  SIGN UP
-                </button>
-              </form>
+                  {/* Terms Agreement */}
+                  <div className="flex items-center text-sm">
+                    <label className="flex items-center text-white/70 cursor-pointer hover:text-white transition-colors duration-200">
+                      <input 
+                        type="checkbox" 
+                        required
+                        className="mr-2 rounded bg-white/10 border-white/20 text-cyan-500 focus:ring-cyan-400"
+                      />
+                      I agree to the{" "}
+                      <a href="#" className="text-cyan-300 hover:text-cyan-200 ml-1 transition-colors duration-200">
+                        terms and conditions
+                      </a>
+                    </label>
+                  </div>
 
-              {/* Log In Link */}
-              <div className="register-link mt-6 text-gray-600 text-sm">
-                <p>
-                  Already have an account?{" "}
-                  <a
-                    href="#"
-                    onClick={(e) => { e.preventDefault(); flipAgain(); }}
-                    className="text-indigo-600 font-bold hover:text-indigo-800 transition duration-150"
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-4 rounded-2xl font-semibold hover:from-cyan-600 hover:to-blue-600 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-xl"
                   >
-                    Log In
-                  </a>
-                </p>
+                    CREATE ACCOUNT
+                  </button>
+                </form>
+
+                {/* Divider */}
+                <div className="relative flex items-center my-6">
+                  <div className="flex-grow border-t border-white/20"></div>
+                  <span className="flex-shrink mx-4 text-white/60 text-sm">or sign up with</span>
+                  <div className="flex-grow border-t border-white/20"></div>
+                </div>
+
+                {/* Social Sign Up */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <button className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl transition-all duration-200 border border-white/20 hover:border-white/30">
+                    <i className="fa fa-google text-red-400" />
+                    <span className="text-sm font-medium">Google</span>
+                  </button>
+                  <button className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl transition-all duration-200 border border-white/20 hover:border-white/30">
+                    <i className="fa fa-apple" />
+                    <span className="text-sm font-medium">Apple</span>
+                  </button>
+                </div>
+
+                {/* Login Link */}
+                <div className="text-center">
+                  <p className="text-white/70 text-sm">
+                    Already have an account?{" "}
+                    <button
+                      onClick={flipAgain}
+                      className="text-cyan-300 font-semibold hover:text-cyan-200 transition-colors duration-200 underline"
+                    >
+                      Sign in
+                    </button>
+                  </p>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -251,4 +347,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Login;
