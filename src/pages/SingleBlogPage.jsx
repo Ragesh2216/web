@@ -14,40 +14,51 @@ import Subscribe from "../components/Subscribe";
 
 const SingleBlogPage = () => {
   return (
-    <main className=" mt-0 bg-orange-100 px-24 max-sm:px-4">
-      <section className="w-10/12 max-md:w-full mx-auto">
-        <div className="blogHeader">
-          <h1 className="text-5xl text-slate-800 max-sm:text-3xl max-sm:text-center font-semibold">
+    <main className="mt-0 bg-orange-50 px-4 sm:px-8 lg:px-24 py-12">
+      <section className="w-full max-w-4xl mx-auto">
+        {/* Blog Header */}
+        <div className="blogHeader text-center sm:text-left">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl text-slate-800 font-bold leading-tight">
             Self-observation is the first step of inner unfolding
           </h1>
-          <div className="metaData mt-5 flex max-sm:flex-col max-sm:gap-2 items-center gap-8">
-            <div className="author flex items-center gap-2">
+          <div className="metaData mt-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 justify-center sm:justify-start">
+            <div className="author flex items-center gap-3 justify-center sm:justify-start">
               <img
                 src={author3}
-                width={30}
-                height={30}
-                className="rounded-full"
-                alt=""
+                width={40}
+                height={40}
+                className="rounded-full border-2 border-white shadow-sm"
+                alt="Biswajit Saha"
               />
-              <h4 className="text-base font-medium text-slate-800 hover:underline underline-offset-8">
-                <Link to="">Biswajit Saha</Link>
+              <h4 className="text-base font-semibold text-slate-800 hover:text-blue-600 transition-colors">
+                <Link to="/author/biswajit-saha">Biswajit Saha</Link>
               </h4>
             </div>
-            <ul className="list-disc text-base text-neutral-600 flex items-center gap-8">
-              <li>March 16, 2022</li>
-              <li>2 min read</li>
+            <ul className="flex items-center gap-4 sm:gap-8 text-sm sm:text-base text-neutral-600 justify-center sm:justify-start">
+              <li className="flex items-center gap-1">
+                <span className="w-1 h-1 bg-neutral-400 rounded-full"></span>
+                March 16, 2022
+              </li>
+              <li className="flex items-center gap-1">
+                <span className="w-1 h-1 bg-neutral-400 rounded-full"></span>
+                2 min read
+              </li>
             </ul>
           </div>
         </div>
+
+        {/* Blog Cover Image */}
         <div className="blogCoverImg mt-8">
           <img
             src={girlImg}
-            className="w-full object-cover rounded-xl"
-            alt=""
+            className="w-full h-auto max-h-96 object-cover rounded-xl shadow-lg"
+            alt="Girl wearing woolen shawl"
           />
         </div>
-        <div className="blogContent mt-3">
-          <p className="text-slate-800 text-lg text-justify">
+
+        {/* Blog Content */}
+        <div className="blogContent mt-8 max-w-3xl mx-auto">
+          <p className="text-slate-700 text-lg leading-relaxed mb-6">
             Almost instantly the whole truth of the transaction seemed to rush
             upon her mind, and her wrath was inconceivably violent. She asked me
             a thousand questions in a breath; but, fortunately, was too vehement
@@ -57,95 +68,88 @@ const SingleBlogPage = () => {
             punishment she might lawfully inflict upon the Captain for his
             assault.
           </p>
-          <p className="text-slate-800 text-lg text-justify mt-3">
+          <p className="text-slate-700 text-lg leading-relaxed mb-6">
             I believe we were an hour at Bishopsgate Street before poor Madame
             Duval could allow any thing to be mentioned but her own story; at
             any length, however, Mr. Branghton told her, that M. Du Bois, and
             all his own family, were waiting for her at his house. A
             hackney-coach was then called, and we proceeded to Snow Hill.
           </p>
-          <h3 className="text-3xl text-slate-800 font-semibold mt-5">
+          
+          <h3 className="text-2xl sm:text-3xl text-slate-800 font-bold mt-8 mb-4">
             I'll never forget the advice my father gave me
           </h3>
-          <p className="text-slate-800 text-lg text-justify mt-3">
+          
+          <p className="text-slate-700 text-lg leading-relaxed mb-6">
             Mr. Branghton's house is small and inconvenient; though his shop,
             which takes in all the ground floor, is large and commodious. I
             believe I told you before, that he is a silver-smith.
           </p>
-          <div className="blockquote italic px-5 py-4 rounded-lg mt-4 bg-slate-800">
-            <FormatQuoteOutlinedIcon className="text-slate-700 !text-7xl " />
-            <p className="text-xl text-white">
-              Inspiration is a message from your unconscious wisdom telling you
+
+          {/* Blockquote */}
+          <div className="blockquote relative px-6 py-8 rounded-xl mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+            <FormatQuoteOutlinedIcon className="absolute -top-2 -left-2 text-white opacity-20 !text-6xl" />
+            <p className="text-lg sm:text-xl font-light italic relative z-10">
+              "Inspiration is a message from your unconscious wisdom telling you
               to go out there and be the fullest, most positive expression of
-              you who you REALLY are
+              you who you REALLY are"
             </p>
           </div>
-          <ul className="list-disc text-slate-800 text-lg text-justify flex flex-col gap-3 mt-4 px-4">
-            <li>
-              We were conducted up two pairs of stairs: for the dining-room, Mr.
-              Branghton told us, was let. His two daughters, their brother, M.
-              Du Bois, and a young man, were at tea.
+
+          {/* List */}
+          <ul className="list-none text-slate-700 text-lg leading-relaxed mt-8 space-y-4">
+            <li className="flex items-start gap-3">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+              <span>We were conducted up two pairs of stairs: for the dining-room, Mr. Branghton told us, was let. His two daughters, their brother, M. Du Bois, and a young man, were at tea.</span>
             </li>
-            <li>
-              They had waited some time for Madame Duval, but I found they had
-              not any expectation that I should accompany her; and the young
-              ladies.
+            <li className="flex items-start gap-3">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+              <span>They had waited some time for Madame Duval, but I found they had not any expectation that I should accompany her; and the young ladies.</span>
             </li>
-            <li>
-              I believe, were rather more surprised than pleased when I made my
-              appearance; for they seemed hurt that I should see their
-              apartment.
+            <li className="flex items-start gap-3">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+              <span>I believe, were rather more surprised than pleased when I made my appearance; for they seemed hurt that I should see their apartment.</span>
             </li>
-            <li>
-              Indeed, I would willingly have saved them that pain, had it been
-              in my power.
+            <li className="flex items-start gap-3">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></span>
+              <span>Indeed, I would willingly have saved them that pain, had it been in my power.</span>
             </li>
           </ul>
-           <div className="share text-center mt-12">
-            <h4 className="text-xl text-slate-800 font-medium">
+
+          {/* Share Section */}
+          <div className="share text-center mt-12 pt-8 border-t border-gray-200">
+            <h4 className="text-xl text-slate-800 font-semibold mb-6">
               Share This Article
             </h4>
-            <ul className="flex justify-center gap-5 max-sm:gap-3 mt-5">
-              <li>
-                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
-                  <FacebookOutlinedIcon />
-                </Link>
-              </li>
-              <li>
-                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
-                  <TwitterIcon />
-                </Link>
-              </li>
-              <li>
-                <Link to="./404"className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
-                  <PinterestIcon />
-                </Link>
-              </li>
-              <li>
-                <Link to="./404"className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
-                  <WhatsAppIcon />
-                </Link>
-              </li>
-              <li>
-                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
-                  <LinkedInIcon />
-                </Link>
-              </li>
-              <li>
-                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
-                  <MailOutlineOutlinedIcon />
-                </Link>
-              </li>
-              <li>
-                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
-                  <LinkOutlinedIcon />
-                </Link>
-              </li>
+            <ul className="flex flex-wrap justify-center gap-3 sm:gap-4">
+              {[
+                { icon: FacebookOutlinedIcon, color: "hover:bg-blue-600 hover:text-white", label: "Facebook" },
+                { icon: TwitterIcon, color: "hover:bg-blue-400 hover:text-white", label: "Twitter" },
+                { icon: PinterestIcon, color: "hover:bg-red-600 hover:text-white", label: "Pinterest" },
+                { icon: WhatsAppIcon, color: "hover:bg-green-500 hover:text-white", label: "WhatsApp" },
+                { icon: LinkedInIcon, color: "hover:bg-blue-700 hover:text-white", label: "LinkedIn" },
+                { icon: MailOutlineOutlinedIcon, color: "hover:bg-gray-600 hover:text-white", label: "Email" },
+                { icon: LinkOutlinedIcon, color: "hover:bg-purple-600 hover:text-white", label: "Copy Link" }
+              ].map((social, index) => (
+                <li key={index}>
+                  <Link 
+                    to="./404" 
+                    className={`bg-white p-3 flex justify-center items-center w-12 h-12 text-slate-600 rounded-full shadow-sm border border-gray-200 transition-all duration-200 ${social.color} hover:scale-110`}
+                    aria-label={`Share on ${social.label}`}
+                  >
+                    <social.icon />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </section>
-      <Subscribe />
+      
+      {/* Subscribe Component */}
+      <div className="mt-16">
+        <Subscribe />
+      </div>
     </main>
   );
 };

@@ -23,9 +23,9 @@ const Navbar = ({closemenu}) => {
 
   return (
     <div className="nav">
-      <header className="bg-gradient-to-r from-[#6e0c80] to-[#d1f337] fixed top-0 left-0 w-full shadow-md z-[10000]">
+      <header className="bg-gradient-to-r from-[#6e0c80] to-[#d1f337] fixed top-0 left-0 w-full shadow-md z-[9999]">
         <nav
-          className="flex justify-between items-center px-3 py-2 max-w-7xl mx-auto relative" // Added relative here
+          className="flex justify-between items-center px-6 py-3 max-w-5xl mx-auto relative" // Added relative here
           ref={navRef}
         >
           {/* Logo - Increased z-index */}
@@ -65,7 +65,7 @@ const Navbar = ({closemenu}) => {
               ${isOpen ? "flex" : "hidden"} 
               md:flex
               flex-col md:flex-row
-              gap-4 md:gap-4 lg:gap-6
+              gap-4 md:gap-0 lg:gap-6
               items-center 
               text-md text-slate-800 font-medium
               /* Mobile styles - Fixed positioning */
@@ -74,7 +74,7 @@ const Navbar = ({closemenu}) => {
               left-0 md:left-auto
               right-0 md:right-auto
               w-full md:w-auto
-              py-2 md:py-0
+              py-0 md:py-
               bg-white md:bg-transparent
               rounded-lg md:rounded-none
               shadow-lg md:shadow-none
