@@ -281,18 +281,23 @@ const Latest = () => {
                         <p className="text-blue-100 max-w-3xl mx-auto mb-8">
                             Get the most important stories delivered straight to your inbox every morning. Free, fast, and factual.
                         </p>
-                        <div className="flex flex-col md:flex-row justify-center gap-3">
-                            <input
-                                type="email"
-                                placeholder="Enter your email address"
-                                required
-                                className="w-full md:w-80 px-5 py-3 rounded-lg text-gray-800 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                            />
-                            <button onClick={() => { window.location.href = '/404' }}
-                                className="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">
-                                Sign Up for Free
-                            </button>
-                        </div>
+                        <form onSubmit={(e) => {
+    e.preventDefault();
+    window.location.href = '/thank-you';
+}} className="flex flex-col sm:flex-row gap-3 max-w-md">
+    <input
+        type="email"
+        placeholder="Enter your email address"
+        required
+        className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200"
+    />
+    <button 
+        type="submit"
+        className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg whitespace-nowrap"
+    >
+        Sign Up for Free
+    </button>
+</form>
                     </div>
                 </section>
             </section>
