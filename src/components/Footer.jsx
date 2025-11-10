@@ -75,29 +75,7 @@ const Footer = () => {
           </ul>
         </div>
         
-        {/* Connect Links */}
-        <div className="max-md:col-span-2 max-md:text-center md:text-left">
-          <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">Connect</h5>
-          <ul className="space-y-3">
-            {[
-              
-              { to: "/google", label: "google" },
-              {  to: "/linkedin", label: "Linkedin" },
-              {  to: "/whatsapp", label: "whatsapp" },
-            ].map((link, index) => (
-              <li key={index}>
-                {/* FIXED: Replaced <Link> with standard <a> tag */}
-                <a 
-                  href={link.to} 
-                  className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-base font-normal"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+        
        {/* Connect Links */}
         <div className="max-md:col-span-2 max-md:text-center md:text-center">
   <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">
