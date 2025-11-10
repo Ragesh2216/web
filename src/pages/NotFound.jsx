@@ -14,7 +14,7 @@ export default function NotFound() {
   // Suggested pages based on common navigation patterns
   const suggestedPages = [
     { path: "/", name: "Home", description: "Back to homepage" },
-    { path: "/archive", name: "Archive", description: "Browse all articles" },
+    { path: "/services", name: "service", description: "our service" },
     { path: "/tags", name: "Topics", description: "Explore by category" },
     { path: "/about", name: "About", description: "Learn about us" },
   ];
@@ -133,12 +133,7 @@ export default function NotFound() {
               >
                 Contact Support
               </Link>
-              <Link
-                to="/search"
-                className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200"
-              >
-                Try Search
-              </Link>
+              
             </div>
           </div>
 

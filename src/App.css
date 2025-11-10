@@ -285,7 +285,7 @@ border-radius: 5px;
 }
 .authors-bg
 {
-	height: auto;
+	height: 100;
 	width: 100%;
 	background-image: var(--tw-gradient-stops);
 	--tw-gradient-from: #f7839c;

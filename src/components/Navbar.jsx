@@ -23,9 +23,9 @@ const Navbar = ({closemenu}) => {
 
   return (
     <div className="nav">
-      <header className="bg-gradient-to-r from-[#6e0c80] to-[#d1f337] fixed top-0 left-0 w-full shadow-md z-[9999]">
+      <header className="bg-gradient-to-r from-[#6e0c80] to-[#d1f337] fixed top-0 left-0 w-full shadow-md z-[10000]">
         <nav
-          className="flex justify-between items-center px-3 py-2 max-w-6xl mx-auto relative" // Added relative here
+          className="flex justify-between items-center px-3 py-2 max-w-7xl mx-auto relative" // Added relative here
           ref={navRef}
         >
           {/* Logo - Increased z-index */}
