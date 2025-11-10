@@ -65,7 +65,7 @@ const Navbar = ({closemenu}) => {
               ${isOpen ? "flex" : "hidden"} 
               md:flex
               flex-col md:flex-row
-              gap-4 md:gap-4 lg:gap-6
+              gap-1 md:gap-1 lg:gap-1
               items-center 
               text-md text-slate-800 font-medium
               /* Mobile styles - Fixed positioning */
