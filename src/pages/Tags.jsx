@@ -265,31 +265,7 @@ const Tags = () => {
           )}
         </section>
 
-        {/* Call to Action */}
-        <section className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Can't Find What You're Looking For?
-            </h2>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Suggest new topics or explore our complete article archive
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Suggest a Topic
-              </Link>
-              <Link
-                to="/archive"
-                className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                Browse All Articles
-              </Link>
-            </div>
-          </div>
-        </section>
+       
       </main>
     </div>
   );
