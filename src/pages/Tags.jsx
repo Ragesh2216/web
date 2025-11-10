@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Tag1 from "../images/tag-inspiration-cover.webp";
-import Tag2 from "../images/tag-nature-cover.webp";
-import Tag3 from "../images/tag-lifestyle-cover.webp";
-import Tag4 from "../images/tag-health-cover.webp";
-import Tag5 from "../images/tag-technology-jpg.webp";
-import Tag6 from "../images/tag-travel-cover.webp";
-import Tag7 from "../images/tag-food-cover.webp";
+import Tag1 from "../images/tag-inspiration-cover.webp.jpeg";
+import Tag2 from "../images/tag-nature-cover.webp.jpeg";
+import Tag3 from "../images/tag-lifestyle-cover.webp.jpeg";
+import Tag4 from "../images/tag-health-cover.webp.jpeg";
+import Tag5 from "../images/tag-technology-cover.webp.jpeg";
+import Tag6 from "../images/tag-travel-cover.webp.jpeg";
+import Tag7 from "../images/tag-food-cover.webp.jpeg";
 
 const Tags = () => {
   const [searchTerm, setSearchTerm] = useState("");

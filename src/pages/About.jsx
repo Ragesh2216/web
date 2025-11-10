@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Subscribe from "../components/Subscribe";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -285,13 +286,19 @@ const About = () => {
               Join thousands of readers who trust us for accurate, timely, and impactful journalism.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
-                Subscribe to Our Newsletter
-              </button>
-              <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
-                Contact Our Team
-              </button>
-            </div>
+  <button 
+    onClick={() => window.location.href = './404'}
+    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+  >
+    Subscribe to Our Newsletter
+  </button>
+  <button 
+    onClick={() => window.location.href = './404'}
+    className="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+  >
+    Contact Our Team
+  </button>
+</div>
           </div>
         </section>
       </main>

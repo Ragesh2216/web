@@ -108,37 +108,37 @@ const SingleBlog4 = () => {
             </h4>
             <ul className="flex justify-center gap-5 max-sm:gap-3 mt-5">
               <li>
-                <Link className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
+                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
                   <FacebookOutlinedIcon />
                 </Link>
               </li>
               <li>
-                <Link className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
+                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
                   <TwitterIcon />
                 </Link>
               </li>
               <li>
-                <Link className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
+                <Link to="./404"className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
                   <PinterestIcon />
                 </Link>
               </li>
               <li>
-                <Link className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
+                <Link to="./404"className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
                   <WhatsAppIcon />
                 </Link>
               </li>
               <li>
-                <Link className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
+                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
                   <LinkedInIcon />
                 </Link>
               </li>
               <li>
-                <Link className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
+                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
                   <MailOutlineOutlinedIcon />
                 </Link>
               </li>
               <li>
-                <Link className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
+                <Link to="./404" className="bg-zinc-100 p-2 flex justify-center items-center w-fit text-slate-800 rounded-full">
                   <LinkOutlinedIcon />
                 </Link>
               </li>

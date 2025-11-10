@@ -77,7 +77,7 @@ const Hero = () => {
                         to="/explore-services"
                         className="inline-block bg-[#FFD900] text-gray-900 font-bold py-3 px-10 rounded-full shadow-lg transition duration-300 transform hover:scale-105 hover:bg-yellow-400"
                     >
-                        Explore Services
+                        Explore 
                     </Link>
 
                 </div>
@@ -176,15 +176,7 @@ const Latest = () => {
                         </div>
                     </div>
                 </div>
-                <section className="hero py-24 text-center text-white bg-opacity-80 bg-black">
-                    <h1 className="text-5xl font-bold mb-4">Your Daily Source for Trusted News </h1>
-                    <p className="text-lg max-w-2xl mx-auto mb-6">
-                        In-depth stories, investigative journalism, and the latest updates that matter to you.
-                    </p>
-                    <Link to="../single-blog3" className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-medium hover:bg-yellow-500 transition">
-                        Explore Articles
-                    </Link  >
-                </section>
+                
 
                 <section className="bg-green-300 py-20 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold text-blue-700 mb-4">
@@ -197,9 +189,12 @@ const Latest = () => {
                     </p>
                     <div className="flex justify-center gap-4">
                         
-                        <button onClick={() => { window.location.href = '/404' }} className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition">
-                            Subscribe Now
-                        </button>
+                       <Link 
+  to="./subscribe"
+  className="inline-block border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 text-center"
+>
+  Subscribe Now
+</Link>
                     </div>
                 </section>
                 <div className="bg-red-50">
@@ -276,58 +271,7 @@ const Latest = () => {
                     </section>
 
 
-                    <section className="py-16 px-4 bg-yellow-200">
-                        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
-
-                            {/* Left Column: Main Feature/Opinion */}
-                            <div className="lg:w-2/3">
-                                <h2 className="text-3xl font-extrabold text-gray-900 mb-6 border-b-2 border-red-600 pb-2 inline-block">
-                                    Featured Opinion
-                                </h2>
-                                <div className="p-6 border border-gray-100 rounded-xl shadow-lg">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                                        The Illusion of Control: Why Central Planning Always Fails
-                                    </h3>
-                                    <p className="text-gray-600 mb-4 leading-relaxed">
-                                        In a complex, dynamic global economy, attempts by central bodies to micromanage outcomes inevitably lead to unintended consequences and economic distortion...
-                                        <a href="./single-blog" className="text-blue-600 font-medium hover:text-blue-800 transition">
-                                            (Read Full Article)
-                                        </a>
-                                    </p>
-                                    <p className="text-sm text-gray-500">
-                                        — By <span className="font-semibold text-gray-700">Dr. Helena Vance</span>, Chief Economic Analyst
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Right Column: Sidebar (More Opinion/Links) */}
-                            <div className="lg:w-1/3">
-                                <h3 className="text-xl font-bold text-gray-900 mb-4 border-b pb-2">
-                                    More Editorials
-                                </h3>
-                                <ul className="space-y-4">
-                                    <li className="border-b pb-2">
-                                        <a href="./single-blog4" className="font-medium text-gray-800 hover:text-red-600 transition">
-                                            Why Remote Work is Not the Future We Expected
-                                        </a>
-                                        <p className="text-xs text-gray-500 mt-1">Culture | 4 min read</p>
-                                    </li>
-                                    <li className="border-b pb-2">
-                                        <a href="./single-blog2" className="font-medium text-gray-800 hover:text-red-600 transition">
-                                            The Hidden Cost of Cloud Computing Dependency
-                                        </a>
-                                        <p className="text-xs text-gray-500 mt-1">Tech | 6 min read</p>
-                                    </li>
-                                    <li>
-                                        <a href="./single-blog" className="font-medium text-gray-800 hover:text-red-600 transition">
-                                            Revisiting the Cold War Strategy in Modern Geopolitics
-                                        </a>
-                                        <p className="text-xs text-gray-500 mt-1">World | 7 min read</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
+                   
                 </div>
                 <section className="bg-blue-700 py-16 px-4">
                     <div className="max-w-4xl mx-auto text-center text-white">
@@ -341,6 +285,7 @@ const Latest = () => {
                             <input
                                 type="email"
                                 placeholder="Enter your email address"
+                                required
                                 className="w-full md:w-80 px-5 py-3 rounded-lg text-gray-800 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                             />
                             <button onClick={() => { window.location.href = '/404' }}
