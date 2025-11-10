@@ -109,16 +109,16 @@ const Login = () => {
         </div>
 
         {/* Main Card Container */}
-        <div className={`w-full max-w-md card-perspective transition-all duration-1000 transform ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <div className={`w-full max-w-md mt-4 card-perspective transition-all duration-1000 transform ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           
           {/* Flip Container */}
           <div className={`flip-card-inner relative w-full h-[600px] ${isFlipped ? 'flipped' : ''}`}>
             
             {/* LOGIN SIDE */}
-            <div className="box-login mt-20 card-face absolute w-full h-full rounded-3xl p-8 flex flex-col items-center justify-center glow-effect">
+            <div className="box-login mt-12 card-face absolute w-full h-full rounded-3xl p-8 flex flex-col items-center justify-center glow-effect">
               <div className="w-full max-w-xs animate-fadeInUp">
                 {/* Header */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-12">
                   <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent mb-2">
                     Welcome Back
                   </h1>
@@ -193,17 +193,7 @@ const Login = () => {
                   <div className="flex-grow border-t border-white/20"></div>
                 </div>
 
-                {/* Social Login */}
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <button className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl transition-all duration-200 border border-white/20 hover:border-white/30">
-                    <i className="fa fa-google text-red-400" />
-                    <span className="text-sm font-medium">Google</span>
-                  </button>
-                  <button className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl transition-all duration-200 border border-white/20 hover:border-white/30">
-                    <i className="fa fa-github" />
-                    <span className="text-sm font-medium">GitHub</span>
-                  </button>
-                </div>
+                
 
                 {/* Sign Up Link */}
                 <div className="text-center">
@@ -221,11 +211,11 @@ const Login = () => {
             </div>
 
             {/* SIGN UP SIDE */}
-            <div className="box-signup card-face absolute w-full h-full rounded-3xl p-8 flex flex-col items-center justify-center glow-effect">
+            <div className="box-signup card-face absolute w-full h-full  mt-28 rounded-3xl p-3 flex flex-col items-center justify-center glow-effect">
               <div className="w-full max-w-xs animate-fadeInUp">
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent mb-2">
+                  <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent mb-6">
                     Join Us
                   </h1>
                   <p className="text-white/70 text-sm">
@@ -314,17 +304,7 @@ const Login = () => {
                   <div className="flex-grow border-t border-white/20"></div>
                 </div>
 
-                {/* Social Sign Up */}
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <button className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl transition-all duration-200 border border-white/20 hover:border-white/30">
-                    <i className="fa fa-google text-red-400" />
-                    <span className="text-sm font-medium">Google</span>
-                  </button>
-                  <button className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl transition-all duration-200 border border-white/20 hover:border-white/30">
-                    <i className="fa fa-apple" />
-                    <span className="text-sm font-medium">Apple</span>
-                  </button>
-                </div>
+                
 
                 {/* Login Link */}
                 <div className="text-center">
