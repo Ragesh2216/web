@@ -373,7 +373,7 @@ export default function Service() {
               <p className="text-blue-200 mt-6 text-sm group-hover:text-blue-100 transition-colors duration-300">
                 Typically respond within 2 business hours
               </p>
-            </div> 
+            </div>
           </div>
         </section>
       </main>

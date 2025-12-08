@@ -29,16 +29,8 @@ const router = createHashRouter([
     element: <App element={<Home />} />,
   },
   {
-    path: "/ArchiveDop",
-    element: <App element={<ArchiveDop />} />,
-  },
-  {
     path: "/homepage2",
     element: <App element={<Homepage2 />} />,
-  },
-  {
-    path: "/subscription",
-    element: <App element={<Subscription />} />,
   },
   {
     path: "/about",
@@ -53,9 +45,15 @@ const router = createHashRouter([
     element: <App element={<Contact />} />,
   },
   {
-    path: "/Login",
+    path: "/login",
     element: <App element={<Login />} />,
   },
+  {
+    path: "/subscription",
+    element: <App element={<Subscription />} />,
+  },
+  
+  // Blog Routes
   {
     path: "/single-blog",
     element: <App element={<SingleBlogPage />} />,
@@ -76,13 +74,39 @@ const router = createHashRouter([
     path: "/single-blog4",
     element: <App element={<SingleBlog4 />} />,
   },
+  
+  // Archive Routes (for Footer navigation)
   {
-    path: "*",
-    element: <App element={<NotFound />} />,
+    path: "/tags",
+    element: <App element={<Tags />} />,
   },
+  {
+    path: "/authors",
+    element: <App element={<Authors />} />,
+  },
+  {
+    path: "/monthly-archive",
+    element: <App element={<MonthArchive />} />,
+  },
+  {
+    path: "/yearly-archive",
+    element: <App element={<YearArchive />} />,
+  },
+  {
+    path: "/ArchiveDop",
+    element: <App element={<ArchiveDop />} />,
+  },
+  
+  // Service Routes
   {
     path: "/explore-services",
     element: <App element={<ExploreServices />} />,
+  },
+  
+  // 404 Route - must be last
+  {
+    path: "*",
+    element: <App element={<NotFound />} />,
   },
 ]);
 
