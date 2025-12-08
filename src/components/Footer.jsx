@@ -53,10 +53,10 @@ const Footer = () => {
           <h5 className="text-white text-lg font-semibold tracking-wider uppercase mb-5">Archive</h5>
           <ul className="space-y-3">
             {[
-              { to: "/404", label: "Tags" },
-              { to: "/404", label: "Authors" },
-              { to: "/404", label: "Monthly Archive" },
-              { to: "/404", label: "Yearly Archive" },
+              { to: "/tags", label: "Tags" },
+              { to: "/authors", label: "Authors" },
+              { to: "/monthly-archive", label: "Monthly Archive" },
+              { to: "/yearly-archive", label: "Yearly Archive" },
             ].map((link, index) => (
               <li key={index}>
                 <Link 
