@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "../images/Logo.webp";
+import Logo from "../images/logo.webp";
 import { Link, useLocation } from "react-router-dom";
 import { 
   FaHome, 
