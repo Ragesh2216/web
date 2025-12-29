@@ -177,25 +177,25 @@ const Footer = () => {
               icon: <TwitterIcon className="text-sky-500" />, 
               to: "/404", 
               bg: "hover:bg-sky-50 hover:border-sky-200",
-              border: "border-sky-100"
+              border: "border-yellow-100"
             },
             { 
               icon: <FacebookIcon className="text-blue-600" />, 
               to: "/404", 
               bg: "hover:bg-blue-50 hover:border-blue-200",
-              border: "border-blue-100"
+              border: "border-red-100"
             },
             { 
               icon: <InstagramIcon className="text-pink-600" />, 
               to: "/404", 
               bg: "hover:bg-pink-50 hover:border-pink-200",
-              border: "border-pink-100"
+              border: "border-gray-100"
             },
             { 
               icon: <GitHubIcon className="text-gray-800" />, 
               to: "/404", 
               bg: "hover:bg-gray-100 hover:border-gray-300",
-              border: "border-gray-200"
+              border: "border-pink-200"
             },
           ].map((social, index) => (
             <Link
