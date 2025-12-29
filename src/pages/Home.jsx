@@ -3,7 +3,9 @@ import Footer from "../components/Footer";
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Search, Menu, X, Clock, Share2, Bookmark, ChevronRight, TrendingUp, Users, Globe, Video, Filter, Calendar, Eye, MessageCircle, ThumbsUp, Play, Newspaper, Briefcase, Code, Music, Star, Zap, Award, Target } from 'lucide-react';
-
+import web from '../images/broadcast.webp';
+import ram from '../images/editorial.webp';
+import yuva from '../images/harini.webp';
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
@@ -48,7 +50,7 @@ const Home = () => {
       views: "124K",
       comments: "2.4K",
       likes: "8.7K",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&auto=format&fit=crop",
+      image: web,
       author: "Dr. Sarah Chen",
       authorImage: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&auto=format&fit=crop",
       trending: true,
@@ -122,7 +124,7 @@ const Home = () => {
       readTime: "4 min read",
       views: "98K",
       comments: "2.9K",
-      image: "https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?w=800&auto=format&fit=crop",
+      image: ram,
       author: "Sophia Martinez",
       premium: false
     }
@@ -225,7 +227,7 @@ const Home = () => {
       role: "Tech Analyst",
       articles: 142,
       followers: "124K",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&auto=format&fit=crop",
+      image: yuva,
       verified: true
     },
     {
@@ -757,81 +759,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Video News Section */}
-      <section className="px-4 py-8">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
-                <Video className="text-red-500" />
-                Video News
-              </h2>
-              <Link to="/videos">
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm font-medium"
-                >
-                  All Videos
-                  <ChevronRight size={16} />
-                </motion.div>
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {videoNews.map((video, index) => (
-                <motion.div
-                  key={video.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                  className="group"
-                >
-                  <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50">
-                    <div className="relative h-48 overflow-hidden">
-                      <img 
-                        src={video.thumbnail} 
-                        alt={video.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-red-500 rounded-full flex items-center justify-center"
-                      >
-                        <Play size={24} fill="white" />
-                      </motion.button>
-                      <div className="absolute bottom-3 right-3 px-2 py-1 bg-gray-900/90 backdrop-blur-sm rounded text-xs">
-                        {video.duration}
-                      </div>
-                    </div>
-                    
-                    <div className="p-4">
-                      <h3 className="font-bold mb-2 group-hover:text-blue-300 transition-colors line-clamp-2">
-                        {video.title}
-                      </h3>
-                      <div className="flex items-center justify-between text-sm text-gray-400">
-                        <span>{video.channel}</span>
-                        <span className="flex items-center gap-1">
-                          <Eye size={14} />
-                          {video.views}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* Editors Pick & Authors */}
       <section className="px-4 py-8">
@@ -938,13 +866,15 @@ const Home = () => {
                           <span>{author.followers} followers</span>
                         </div>
                       </div>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-3 py-1 text-sm bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
-                      >
-                        Follow
-                      </motion.button>
+       <Link to="/404">
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="px-3 py-1 text-sm bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-medium"
+  >
+    Follow
+  </motion.button>
+</Link>
                     </div>
                   </motion.div>
                 ))}

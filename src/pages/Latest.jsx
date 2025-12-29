@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import karthi from '../images/investigation.webp';
 import Footer from "../components/Footer";
 import { Search, Menu, X, Bookmark, Share2, Heart, Clock, ChevronRight, Play, Users, TrendingUp, Star, Zap, Award, Calendar, Eye, MessageCircle, Filter, BookOpen, Camera, Music, Palette, Film, Coffee } from 'lucide-react';
 
@@ -48,7 +49,7 @@ const Latest = () => {
       authorImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop",
       readTime: "8 min read",
       date: "Today",
-      image: "https://images.unsplash.com/photo-1514888286974-6d03bde4ba04?w=1200&auto=format&fit=crop",
+      image: karthi,
       featured: true,
       trending: true,
       likes: "2.4K",
@@ -746,6 +747,7 @@ const Latest = () => {
                       <h3 className="text-2xl font-bold text-white mb-4">
                         {issue.title}
                       </h3>
+                      <Link to="/404">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -753,6 +755,7 @@ const Latest = () => {
                       >
                         Read Issue
                       </motion.button>
+                      </Link>
                     </div>
                   </div>
                 </motion.div>
