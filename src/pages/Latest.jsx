@@ -809,6 +809,8 @@ const Latest = () => {
                   required
                   className="flex-1 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
+                <Link to="/404">
+                
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -817,6 +819,7 @@ const Latest = () => {
                 >
                   Subscribe
                 </motion.button>
+                </Link>
               </motion.form>
               
               <p className="text-gray-400 text-sm mt-6">

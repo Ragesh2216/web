@@ -924,6 +924,7 @@ const Home = () => {
                   placeholder="Your email address"
                   className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
+                <Link to="/404">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -932,6 +933,7 @@ const Home = () => {
                 >
                   Subscribe
                 </motion.button>
+                </Link>
               </motion.form>
               
               <p className="text-gray-400 text-sm mt-4">
