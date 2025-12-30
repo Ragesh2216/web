@@ -3,7 +3,10 @@ import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence 
 import { Link } from 'react-router-dom';
 import karthi from '../images/investigation.webp';
 import Footer from "../components/Footer";
+import sakthi from '../images/tag-inspiration-cover.webp.jpeg';
 import { Search, Menu, X, Bookmark, Share2, Heart, Clock, ChevronRight, Play, Users, TrendingUp, Star, Zap, Award, Calendar, Eye, MessageCircle, Filter, BookOpen, Camera, Music, Palette, Film, Coffee } from 'lucide-react';
+ import { useNavigate } from 'react-router-dom';
+// Inside your component
 
 const Latest = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +15,7 @@ const Latest = () => {
   const [likedArticles, setLikedArticles] = useState([]);
   const containerRef = useRef(null);
   const heroRef = useRef(null);
+  const navigate = useNavigate();
   
   const { scrollYProgress } = useScroll({
     container: containerRef
@@ -185,7 +189,7 @@ const Latest = () => {
       id: 2,
       title: "Street Photography",
       count: 18,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop",
+      image: sakthi,
       color: "from-purple-500/20 to-pink-500/20"
     },
     {
@@ -797,30 +801,51 @@ const Latest = () => {
                 Get weekly curated stories, exclusive interviews, and behind-the-scenes content delivered to your inbox.
               </p>
               
-              <motion.form
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-              >
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  required
-                  className="flex-1 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
-                <Link to="/404">
-                
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  type="submit"
-                  className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-shadow"
-                >
-                  Subscribe
-                </motion.button>
-                </Link>
-              </motion.form>
+
+             
+
+
+<motion.form
+  initial={{ y: 20, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ delay: 0.4 }}
+  className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+  onSubmit={(e) => {
+    e.preventDefault();
+    // Get the email value
+    const formData = new FormData(e.target);
+    const email = formData.get('email');
+    
+    // Optional: Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    
+    // Optional: Save email to state/context/API
+    console.log('Subscribed email:', email);
+    
+    // Navigate to 404 page using React Router
+    navigate('/404');
+  }}
+>
+  <input
+    type="email"
+    name="email" // Add name attribute
+    placeholder="Your email address"
+    required
+    className="flex-1 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+  />
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    type="submit"
+    className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-shadow"
+  >
+    Subscribe
+  </motion.button>
+</motion.form>
               
               <p className="text-gray-400 text-sm mt-6">
                 Join 50,000+ readers who receive our weekly edition

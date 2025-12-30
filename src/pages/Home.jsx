@@ -6,11 +6,14 @@ import { Search, Menu, X, Clock, Share2, Bookmark, ChevronRight, TrendingUp, Use
 import web from '../images/broadcast.webp';
 import ram from '../images/editorial.webp';
 import yuva from '../images/harini.webp';
+ import { useNavigate } from 'react-router-dom';
+
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeFilter, setActiveFilter] = useState('trending');
   const [savedArticles, setSavedArticles] = useState([]);
+   const navigate = useNavigate();
   const containerRef = useRef(null);
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -916,24 +919,42 @@ const Home = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  // Get the email value
+                  const formData = new FormData(e.target);
+                  const email = formData.get('email');
+                  
+                  // Optional: Validate email
+                  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                  if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address');
+                    return;
+                  }
+                  
+                  // Optional: Save email to state/context/API
+                  console.log('Subscribed email:', email);
+                  
+                  // Navigate to 404 page using React Router
+                  navigate('/404');
+                }}
               >
                 <input
                   type="email"
-                  required
+                  name="email" // Add name attribute
                   placeholder="Your email address"
-                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                  className="flex-1 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
-                <Link to="/404">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-shadow"
+                  className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-shadow"
                 >
                   Subscribe
                 </motion.button>
-                </Link>
               </motion.form>
               
               <p className="text-gray-400 text-sm mt-4">
